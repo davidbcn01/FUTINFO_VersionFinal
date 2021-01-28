@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tacticas1Fragment"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="TÁCTICAS"
+        android:textSize="36dp"
+        android:fontFamily="@font/montserratmedium"
+        android:textColor="@color/black"
+        android:background="@color/azul_cian"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Tácticas ofensivas"
+        android:fontFamily="@font/montserratmedium"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <com.google.android.flexbox.FlexboxLayout
+
+        android:id="@+id/flexboxLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_evenly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="433(4)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="433(3)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="433(2)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="433"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="4231"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="4231(2)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/tacticasDef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Tácticas defensivas"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        android:fontFamily="@font/montserratmedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexboxLayout2" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexboxLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_evenly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tacticasDef">
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="532"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="523"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button30"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="41212"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button40"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="4141"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button50"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="4141(2)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button60"
+            android:layout_width="111dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/azul_cian"
+            android:text="442(2)"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/black" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/textView876"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Crear tácticas"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexboxLayout4" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/azul_cian"
+        android:src="@drawable/plus_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView876" />
+
+    <Button
+        android:id="@+id/button61"
+        android:layout_width="111dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/azul_cian"
+        android:text="Tac1"
+        android:fontFamily="@font/montserratmedium"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/textView876" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

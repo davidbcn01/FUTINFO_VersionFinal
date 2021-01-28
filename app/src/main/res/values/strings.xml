@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FUTINFO V2</string>
+    <string name="prompt_email">Correo electrónico</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_log_in">Iniciar Sesión</string>
+    <string name="action_sign_up">Registrarse</string>
+    <string name="action_change_password">Has olvidado tu contraseña?</string>
+    <string name="action_enter_password_again">Confirme su contraseña</string>
+    <string name="action_AccountID">ID de la cuenta</string>
+    <string name="action_searchPlayer">Busca un jugador</string>
+    <string name="Whats_new">NOVEDADES</string>
+    <string name="New_Objectives">Nuevos Objetivos</string>
+    <string name="New_Tactics">Nuevas Tácticas</string>
+    <string name="Objectives">OBJETIVOS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

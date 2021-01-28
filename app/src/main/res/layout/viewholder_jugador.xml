@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="208dp">
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="179dp"
+        android:layout_height="208dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="@+id/fondo"
+        app:layout_constraintTop_toTopOf="@+id/fondo" />
+
+    <TextView
+        android:id="@+id/posicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/media" />
+
+    <ImageView
+        android:id="@+id/pais"
+        android:layout_width="31dp"
+        android:layout_height="20dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/fondo"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="@+id/fondo"
+        app:layout_constraintTop_toBottomOf="@+id/posicion" />
+
+    <ImageView
+        android:id="@+id/equipo"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/fondo"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="@+id/fondo"
+        app:layout_constraintTop_toBottomOf="@+id/pais" />
+
+    <ImageView
+        android:id="@+id/cara"
+        android:layout_width="88dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="28dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/fondo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/fondo"
+        app:layout_constraintStart_toStartOf="@+id/fondo"
+        app:layout_constraintTop_toBottomOf="@+id/cara" />
+</androidx.constraintlayout.widget.ConstraintLayout>

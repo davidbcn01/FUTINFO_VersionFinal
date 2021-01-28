@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.futinfov2.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.futinfov2.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.futinfov2.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.futinfov2.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_tacticasOfensivasFragment"
+            app:destination="@id/tacticasOfensivasFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_tacticasDefensivasFragment"
+            app:destination="@id/tacticasDefensivasFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_objetivosDiariosFragment"
+            app:destination="@id/objetivosDiariosFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_objetivosJugadorFragment"
+            app:destination="@id/objetivosJugadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadoresValiososFragment"
+        android:name="com.example.futinfov2.JugadoresValiososFragment"
+        android:label="fragment_jugadores_valiosos"
+        tools:layout="@layout/fragment_jugadores_valiosos" />
+    <fragment
+        android:id="@+id/crearTuCartaFragment"
+        android:name="com.example.futinfov2.CrearTuCartaFragment"
+        android:label="fragment_crear_tu_carta"
+        tools:layout="@layout/fragment_crear_tu_carta" >
+        <action
+            android:id="@+id/action_crearTuCartaFragment_to_crearCarta2Fragment"
+            app:destination="@id/crearCarta2Fragment" />
+        <action
+            android:id="@+id/action_crearTuCartaFragment_to_crearCarta3Fragment"
+            app:destination="@id/crearCarta3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tacticas1Fragment"
+        android:name="com.example.futinfov2.Tacticas1Fragment"
+        android:label="fragment_tacticas1"
+        tools:layout="@layout/fragment_tacticas1" >
+        <action
+            android:id="@+id/action_tacticas1Fragment_to_tacticasFormacionFragment"
+            app:destination="@id/tacticasFormacionFragment" />
+        <action
+            android:id="@+id/action_tacticas1Fragment_to_tacticasOfensivasFragment"
+            app:destination="@id/tacticasOfensivasFragment" />
+        <action
+            android:id="@+id/action_tacticas1Fragment_to_tacticasDefensivasFragment"
+            app:destination="@id/tacticasDefensivasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/objetivos1Fragment"
+        android:name="com.example.futinfov2.Objetivos1Fragment"
+        android:label="fragment_objetivos1"
+        tools:layout="@layout/fragment_objetivos1" >
+        <action
+            android:id="@+id/action_objetivos1Fragment_to_objetivosDiariosFragment"
+            app:destination="@id/objetivosDiariosFragment" />
+        <action
+            android:id="@+id/action_objetivos1Fragment_to_objetivosJugadorFragment"
+            app:destination="@id/objetivosJugadorFragment" />
+        <action
+            android:id="@+id/action_objetivos1Fragment_to_objetivosHitosFragment"
+            app:destination="@id/objetivosHitosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/objetivosDiariosFragment"
+        android:name="com.example.futinfov2.ObjetivosDiariosFragment"
+        android:label="fragment_objetivos_diarios"
+        tools:layout="@layout/fragment_objetivos_diarios" />
+    <fragment
+        android:id="@+id/objetivosJugadorFragment"
+        android:name="com.example.futinfov2.ObjetivosJugadorFragment"
+        android:label="fragment_objetivos_jugador"
+        tools:layout="@layout/fragment_objetivos_jugador" />
+    <fragment
+        android:id="@+id/objetivosHitosFragment"
+        android:name="com.example.futinfov2.ObjetivosHitosFragment"
+        android:label="fragment_objetivos_hitos"
+        tools:layout="@layout/fragment_objetivos_hitos" />
+    <fragment
+        android:id="@+id/tacticasFormacionFragment"
+        android:name="com.example.futinfov2.TacticasFormacionFragment"
+        android:label="fragment_tacticas_formacion"
+        tools:layout="@layout/fragment_tacticas_formacion" >
+        <action
+            android:id="@+id/action_tacticasFormacionFragment_to_tacticasEleccionFragment"
+            app:destination="@id/tacticasEleccionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tacticasNuevasFragment"
+        android:name="com.example.futinfov2.TacticasNuevasFragment"
+        android:label="fragment_tacticas_nuevas"
+        tools:layout="@layout/fragment_tacticas_nuevas" >
+        <action
+            android:id="@+id/action_tacticasNuevasFragment_to_tacticasDefensivasFragment"
+            app:destination="@id/tacticasDefensivasFragment" />
+        <action
+            android:id="@+id/action_tacticasNuevasFragment_to_tacticasOfensivasFragment"
+            app:destination="@id/tacticasOfensivasFragment" />
+        <action
+            android:id="@+id/action_tacticasNuevasFragment_to_tacticasFormacionFragment"
+            app:destination="@id/tacticasFormacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tacticasOfensivasFragment"
+        android:name="com.example.futinfov2.TacticasOfensivasFragment"
+        android:label="fragment_tacticas_ofensivas"
+        tools:layout="@layout/fragment_tacticas_ofensivas" />
+    <fragment
+        android:id="@+id/tacticasEleccionFragment"
+        android:name="com.example.futinfov2.TacticasEleccionFragment"
+        android:label="fragment_tacticas_eleccion"
+        tools:layout="@layout/fragment_tacticas_eleccion" >
+        <action
+            android:id="@+id/action_tacticasEleccionFragment_to_tacticasNuevasFragment"
+            app:destination="@id/tacticasNuevasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tacticasDefensivasFragment"
+        android:name="com.example.futinfov2.TacticasDefensivasFragment"
+        android:label="fragment_tacticas_defensivas"
+        tools:layout="@layout/fragment_tacticas_defensivas" />
+    <fragment
+        android:id="@+id/crearCarta2Fragment"
+        android:name="com.example.futinfov2.CrearCarta2Fragment"
+        android:label="fragment_crear_carta2"
+        tools:layout="@layout/fragment_crear_carta2" >
+        <action
+            android:id="@+id/action_crearCarta2Fragment_to_crearTuCartaFragment"
+            app:destination="@id/crearTuCartaFragment" />
+        <action
+            android:id="@+id/action_crearCarta2Fragment_to_crearCarta3Fragment"
+            app:destination="@id/crearCarta3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearCarta3Fragment"
+        android:name="com.example.futinfov2.CrearCarta3Fragment"
+        android:label="fragment_crear_carta3"
+        tools:layout="@layout/fragment_crear_carta3" >
+        <action
+            android:id="@+id/action_crearCarta3Fragment_to_crearTuCartaFragment"
+            app:destination="@id/crearTuCartaFragment" />
+        <action
+            android:id="@+id/action_crearCarta3Fragment_to_crearCarta2Fragment"
+            app:destination="@id/crearCarta2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.futinfov2.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+</navigation>
