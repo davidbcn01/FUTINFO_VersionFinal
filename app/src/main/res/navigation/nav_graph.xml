@@ -194,4 +194,9 @@
             android:id="@+id/action_splashScreenFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/seleccionObSBCFragment"
+        android:name="com.example.futinfov2.SeleccionObSBCFragment"
+        android:label="fragment_seleccion_ob_s_b_c"
+        tools:layout="@layout/fragment_seleccion_ob_s_b_c" />
 </navigation>
