@@ -12,8 +12,14 @@
     <string name="New_Objectives">Nuevos Objetivos</string>
     <string name="New_Tactics">Nuevas Tácticas</string>
     <string name="Objectives">OBJETIVOS</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="InfoSBC">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, sem in feugiat gravida, dolor turpis blandit velit, vel imperdiet leo nisi ultricies nunc.</string>
+
+    <string name="requisitos">- nbgueigbeuig
+- bsfeubewuijr
+- jikngrinrugnr
+- nuuirreeriger
+- jrbngrgerui
+- nrgnreboinb</string>
 
 
 </resources>
