@@ -204,4 +204,9 @@
         android:name="com.example.futinfov2.SBCFragment"
         android:label="fragment_s_b_c"
         tools:layout="@layout/fragment_s_b_c" />
+    <fragment
+        android:id="@+id/infoSBCFragment"
+        android:name="com.example.futinfov2.InfoSBCFragment"
+        android:label="fragment_info_s_b_c"
+        tools:layout="@layout/fragment_info_s_b_c" />
 </navigation>
