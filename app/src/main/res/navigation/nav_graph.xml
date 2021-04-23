@@ -198,12 +198,20 @@
         android:id="@+id/seleccionObSBCFragment"
         android:name="com.example.futinfov2.SeleccionObSBCFragment"
         android:label="fragment_seleccion_ob_s_b_c"
-        tools:layout="@layout/fragment_seleccion_ob_s_b_c" />
+        tools:layout="@layout/fragment_seleccion_ob_s_b_c" >
+        <action
+            android:id="@+id/action_seleccionObSBCFragment_to_SBCFragment"
+            app:destination="@id/SBCFragment" />
+    </fragment>
     <fragment
         android:id="@+id/SBCFragment"
         android:name="com.example.futinfov2.SBCFragment"
         android:label="fragment_s_b_c"
-        tools:layout="@layout/fragment_s_b_c" />
+        tools:layout="@layout/fragment_s_b_c" >
+        <action
+            android:id="@+id/action_SBCFragment_to_infoSBCFragment"
+            app:destination="@id/infoSBCFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoSBCFragment"
         android:name="com.example.futinfov2.InfoSBCFragment"

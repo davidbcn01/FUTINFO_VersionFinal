@@ -19,7 +19,7 @@
             android:icon="@drawable/plus_circle"
             android:title="Crear" />
         <item
-            android:id="@+id/objetivos1Fragment"
+            android:id="@+id/seleccionObSBCFragment"
             android:icon="@drawable/toggletick"
-            android:title="Objetivos" />
+            android:title="Obj/Sbc" />
     </menu>
