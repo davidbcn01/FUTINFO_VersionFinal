@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ObjetivosJugadorFragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
 
     <TextView
@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="JUGADOR DE LIGA"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="36dp"
         android:gravity="center"
         android:fontFamily="@font/montserratmedium"
-        android:background="@color/azul_cian"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,13 +40,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <TextView
                     android:id="@+id/textView29"
                     android:layout_width="288dp"
                     android:layout_height="157dp"
-                    android:background="@drawable/log_in_bg"
+                    android:background="@drawable/texto_objetivos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

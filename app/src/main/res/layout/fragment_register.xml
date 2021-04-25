@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    android:background="@color/azul_cian">
+    android:background="@drawable/gradientback">
 
     <TextView
         android:id="@+id/textView"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/action_sign_up"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:fontFamily="@font/montserratmedium"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"

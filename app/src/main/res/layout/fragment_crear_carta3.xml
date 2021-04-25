@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CrearTuCartaFragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
     <TextView
         android:id="@+id/textView25"
@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
 
         android:text="CREA TU CARTA"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="36dp"
-        android:background="@color/azul_cian"
+
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -268,6 +268,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/oro_grande"
+            android:background="@drawable/texto_objetivos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -290,6 +291,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/totw_grande"
+            android:background="@drawable/texto_objetivos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -311,6 +313,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icono_grande"
+            android:background="@drawable/texto_objetivos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -339,7 +342,7 @@
                 android:layout_height="wrap_content"
                 android:text="Media"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -355,7 +358,7 @@
                 android:layout_height="wrap_content"
                 android:text="Posición"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -371,7 +374,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nacionalidad"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
@@ -398,7 +401,7 @@
                 android:layout_height="wrap_content"
                 android:text="Equipo"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -424,7 +427,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cara del jugador"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -450,7 +453,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ritmo"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -466,7 +469,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tiro"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -482,7 +485,7 @@
                 android:layout_height="wrap_content"
                 android:text="Pase"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -498,7 +501,7 @@
                 android:layout_height="wrap_content"
                 android:text="Regate"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -514,7 +517,7 @@
                 android:layout_height="wrap_content"
                 android:text="Defensa"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -530,7 +533,7 @@
                 android:layout_height="wrap_content"
                 android:text="Físico"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black" />
+                android:textColor="@color/azul_cian" />
 
             <EditText
                 android:layout_width="match_parent"

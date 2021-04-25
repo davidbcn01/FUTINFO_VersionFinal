@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Tacticas1Fragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
 
     <TextView
@@ -15,8 +15,8 @@
         android:text="TÁCTICAS"
         android:textSize="36dp"
         android:fontFamily="@font/montserratmedium"
-        android:textColor="@color/black"
-        android:background="@color/azul_cian"
+        android:textColor="@color/azul_cian"
+
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:text="Estilo ofensivo"
                     android:fontFamily="@font/montserratmedium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/azul_cian"
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Estilo defensivo"
-                    android:textColor="@color/black"
+                    android:textColor="@color/azul_cian"
                     android:textSize="20dp"
                     android:fontFamily="@font/montserratmedium"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Laterales"
-                    android:textColor="@color/black"
+                    android:textColor="@color/azul_cian"
                     android:textSize="20dp"
                     android:fontFamily="@font/montserratmedium"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Centrocampistas"
-                    android:textColor="@color/black"
+                    android:textColor="@color/azul_cian"
                     android:textSize="20dp"
                     android:fontFamily="@font/montserratmedium"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Delanteros"
-                    android:textColor="@color/black"
+                    android:textColor="@color/azul_cian"
                     android:textSize="20dp"
                     android:fontFamily="@font/montserratmedium"
                     app:layout_constraintEnd_toEndOf="parent"

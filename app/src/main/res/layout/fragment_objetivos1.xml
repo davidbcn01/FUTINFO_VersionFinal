@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Objetivos1Fragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
     <TextView
         android:id="@+id/textView5"
@@ -14,8 +14,7 @@
         android:text="@string/Objectives"
         android:gravity="center"
         android:fontFamily="@font/montserratmedium"
-        android:background="@color/azul_cian"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="36dp"
 
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TacticasFormacionFragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
 
     <TextView
@@ -16,8 +16,7 @@
         android:text="SBC"
         android:fontFamily="@font/montserratmedium"
         android:textSize="36dp"
-        android:textColor="@color/black"
-        android:background="@color/azul_cian"
+        android:textColor="@color/azul_cian"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +29,7 @@
         android:layout_marginTop="60dp"
         android:text="SBC disponibles"
         android:fontFamily="@font/montserratmedium"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -55,7 +54,7 @@
             android:id="@+id/const4"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:background="@color/azul_cian">
+            android:background="@drawable/texto_objetivos">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -83,7 +82,7 @@
             android:id="@+id/const5"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:background="@color/azul_cian">
+            android:background="@drawable/texto_objetivos">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -112,7 +111,7 @@
             android:id="@+id/const6"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:background="@color/azul_cian"
+            android:background="@drawable/texto_objetivos"
             android:layout_marginTop="20dp">
 
             <ImageView
@@ -141,7 +140,7 @@
             android:id="@+id/const7"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:background="@color/azul_cian"
+            android:background="@drawable/texto_objetivos"
             android:layout_marginTop="20dp">
 
             <ImageView

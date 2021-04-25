@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InicioFragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
     <EditText
         android:id="@+id/search_player"
@@ -27,6 +27,7 @@
         android:layout_height="147dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="64dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/xp" />
@@ -36,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@drawable/num_objetivos"
+
         android:text="@string/New_Objectives"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:fontFamily="@font/montserratmedium"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,10 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/Whats_new"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="28dp"
         android:fontFamily="@font/montserratmedium"
-        android:background="@drawable/num_objetivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_player" />
@@ -65,9 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:background="@drawable/num_objetivos"
         android:text="@string/New_Tactics"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="20dp"
         android:fontFamily="@font/montserratmedium"
         app:layout_constraintEnd_toEndOf="parent"

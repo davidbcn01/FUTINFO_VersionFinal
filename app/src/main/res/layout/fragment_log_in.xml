@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    android:background="@color/azul_cian"
+    android:background="@drawable/gradientback"
     tools:context="LogInFragment">
 
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/action_log_in"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:fontFamily="@font/montserratmedium"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up"
         app:layout_constraintVertical_bias="0.336"
-        android:textColor="@color/black"/>
+        android:textColor="@color/azul_cian"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

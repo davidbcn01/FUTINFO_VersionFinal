@@ -5,19 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ObjetivosJugadorFragment"
-    android:background="@color/white">
+    android:background="@drawable/gradientback">
 
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:background="@color/azul_cian"
         android:gravity="center"
         android:text="HITOS"
         android:fontFamily="@font/montserratmedium"
-        android:textColor="@color/black"
+        android:textColor="@color/azul_cian"
         android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,7 +46,7 @@
                     android:layout_width="288dp"
                     android:layout_height="157dp"
 
-                    android:background="@drawable/log_in_bg"
+                    android:background="@drawable/texto_objetivos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -146,7 +144,7 @@
                     android:layout_width="288dp"
                     android:layout_height="157dp"
                     android:layout_marginTop="36dp"
-                    android:background="@drawable/log_in_bg"
+                    android:background="@drawable/texto_objetivos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -244,7 +242,7 @@
                     android:layout_width="288dp"
                     android:layout_height="157dp"
                     android:layout_marginTop="32dp"
-                    android:background="@drawable/log_in_bg"
+                    android:background="@drawable/texto_objetivos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -343,7 +341,7 @@
                     android:layout_width="288dp"
                     android:layout_height="157dp"
                     android:layout_marginTop="36dp"
-                    android:background="@drawable/log_in_bg"
+                    android:background="@drawable/texto_objetivos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

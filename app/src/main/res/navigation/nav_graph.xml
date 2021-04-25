@@ -202,6 +202,9 @@
         <action
             android:id="@+id/action_seleccionObSBCFragment_to_SBCFragment"
             app:destination="@id/SBCFragment" />
+        <action
+            android:id="@+id/action_seleccionObSBCFragment_to_objetivos1Fragment"
+            app:destination="@id/objetivos1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/SBCFragment"

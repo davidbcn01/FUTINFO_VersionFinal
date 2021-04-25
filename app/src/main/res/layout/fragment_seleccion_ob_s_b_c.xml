@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionObSBCFragment">
+    tools:context=".SeleccionObSBCFragment"
+    android:background="@drawable/gradientback">
 
 
 
@@ -15,8 +16,8 @@
         android:text="@string/Objectives"
         android:gravity="center"
         android:fontFamily="@font/montserratmedium"
-        android:background="@color/azul_cian"
-        android:textColor="@color/black"
+
+        android:textColor="@color/azul_cian"
         android:textSize="36dp"
         tools:ignore="MissingConstraints" />
 
@@ -28,7 +29,7 @@
         android:layout_marginTop="120dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="400dp"
-        android:background="@drawable/log_in_bg"
+        android:background="@drawable/texto_objetivos"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/const1"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +68,7 @@
         android:layout_marginTop="400dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="120dp"
-        android:background="@drawable/log_in_bg"
+        android:background="@drawable/texto_objetivos"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/const2"
         app:layout_constraintStart_toStartOf="parent"

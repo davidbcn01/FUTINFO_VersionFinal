@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenFragment"
-    android:background="@color/azul_cian">
+    android:background="@drawable/gradientback">
 
 
     <ImageView
