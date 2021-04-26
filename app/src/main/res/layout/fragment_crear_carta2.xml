@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CREA TU CARTA"
-        android:textColor="@color/azul_cian"
+        android:textColor="@color/white"
         android:textSize="36dp"
         android:fontFamily="@font/montserratmedium"
 
@@ -343,7 +343,7 @@
                 android:layout_height="wrap_content"
                 android:text="Media"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -359,7 +359,7 @@
                 android:layout_height="wrap_content"
                 android:text="Posición"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -375,7 +375,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nacionalidad"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
@@ -402,7 +402,7 @@
                 android:layout_height="wrap_content"
                 android:text="Equipo"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -428,7 +428,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cara del jugador"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
             <com.ornach.nobobutton.NoboButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -454,7 +454,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ritmo"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -470,7 +470,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tiro"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -486,7 +486,7 @@
                 android:layout_height="wrap_content"
                 android:text="Pase"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -502,7 +502,7 @@
                 android:layout_height="wrap_content"
                 android:text="Regate"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -518,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:text="Defensa"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -534,7 +534,7 @@
                 android:layout_height="wrap_content"
                 android:text="Físico"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/azul_cian" />
+                android:textColor="@color/white" />
 
             <EditText
                 android:layout_width="match_parent"
