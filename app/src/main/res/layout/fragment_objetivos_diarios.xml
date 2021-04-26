@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OBJETIVOS DIARIOS"
-        android:textColor="@color/azul_cian"
+        android:textColor="@color/white"
         android:textSize="36dp"
         android:fontFamily="@font/montserratmedium"
 

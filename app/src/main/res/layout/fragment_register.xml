@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/action_sign_up"
-        android:textColor="@color/azul_cian"
+        android:textColor="@color/white"
         android:fontFamily="@font/montserratmedium"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +124,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flecha"
-        android:background="@color/azul_cian"/>
+        app:srcCompat="@drawable/flecha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
