@@ -225,4 +225,27 @@
         android:name="com.example.futinfov2.rankingsFragment"
         android:label="fragment_rankings"
         tools:layout="@layout/fragment_rankings" />
+    <fragment
+        android:id="@+id/futChamp1Fragment"
+        android:name="com.example.futinfov2.FutChamp1Fragment"
+        android:label="fragment_fut_champ1"
+        tools:layout="@layout/fragment_fut_champ1" >
+        <action
+            android:id="@+id/action_futChamp1Fragment_to_futChamp2Fragment"
+            app:destination="@id/futChamp2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/futChamp2Fragment"
+        android:name="com.example.futinfov2.FutChamp2Fragment"
+        android:label="fragment_fut_champ2"
+        tools:layout="@layout/fragment_fut_champ2" >
+        <action
+            android:id="@+id/action_futChamp2Fragment_to_futChamp3Fragment"
+            app:destination="@id/futChamp3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/futChamp3Fragment"
+        android:name="com.example.futinfov2.FutChamp3Fragment"
+        android:label="fragment_fut_champ3"
+        tools:layout="@layout/fragment_fut_champ3" />
 </navigation>
