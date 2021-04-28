@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 
 import com.example.futinfov2.databinding.FragmentLogInBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
@@ -23,6 +24,7 @@ public class LogInFragment extends Fragment  {
 
 private FragmentLogInBinding binding;
 private NavController navController;
+private FirebaseAuth mAuth;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ private NavController navController;
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        mAuth=FirebaseAuth.getInstance();
 
         PushDownAnim.setPushDownAnimTo( binding.login)
                 .setScale( MODE_SCALE, 0.89f  )
@@ -40,8 +43,16 @@ private NavController navController;
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = binding.email.getText().toString();
+                String password = binding.password.getText().toString();
+                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        navController.navigate(R.id.action_logInFragment_to_inicioFragment);
+                    }else{
+                        Toast.makeText(requireContext(),task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                navController.navigate(R.id.action_logInFragment_to_inicioFragment);
             }
         });
 

@@ -79,22 +79,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
-    <EditText
-        android:id="@+id/AccountId"
-        android:layout_width="318dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="21dp"
-        android:text="@string/action_AccountID"
-        android:fontFamily="@font/montserratmedium"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:background="@drawable/log_in_bg"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerEnterPasswordAgain" />
 
 
     <Button
@@ -103,7 +87,6 @@
         android:layout_height="76dp"
         android:layout_gravity="start"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
         android:backgroundTint="@color/black"
         android:enabled="true"
@@ -112,10 +95,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AccountId"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/registerEnterPasswordAgain"
+        app:layout_constraintVertical_bias="0.066"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
