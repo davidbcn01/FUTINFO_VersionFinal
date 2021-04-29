@@ -37,9 +37,9 @@
         android:layout_marginEnd="21dp"
         android:background="@drawable/log_in_bg"
         android:hint="@string/prompt_email"
+        android:textColorHint="@color/Gris"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-
         android:gravity="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         android:fontFamily="@font/montserratmedium"
         android:selectAllOnFocus="true"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColorHint="@color/Gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerEmail" />
@@ -75,7 +75,7 @@
         android:background="@drawable/log_in_bg"
         android:selectAllOnFocus="true"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColorHint="@color/Gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerPassword" />

@@ -349,6 +349,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Introduce la media"
                 android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/Gris"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp" />
 
@@ -365,6 +366,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/Gris"
                 android:hint="Introduce la posición" />
 
             <TextView
@@ -459,6 +461,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:hint="Introduce el ritmo"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"
                 android:textColor="@color/black"/>
 
@@ -475,6 +478,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:hint="Introduce el tiro"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"/>
 
             <TextView
@@ -489,6 +493,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"
                 android:hint="Introduce el pase" />
 
@@ -504,6 +509,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"
                 android:hint="Introduce el regate" />
 
@@ -519,6 +525,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"
                 android:hint="Introduce la defensa" />
 
@@ -534,6 +541,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
+                android:textColorHint="@color/Gris"
                 android:fontFamily="@font/montserratmedium"
                 android:hint="Introduce el físico" />
 
