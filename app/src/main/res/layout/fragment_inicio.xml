@@ -14,7 +14,7 @@
         android:background="@drawable/log_in_bg"
         android:gravity="center"
         android:selectAllOnFocus="true"
-        android:text="Busca un jugador"
+        android:hint="Busca un jugador"
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

@@ -348,11 +348,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Introduce la media"
+                android:hint="Introduce la media"
                 android:fontFamily="@font/montserratmedium"
                 android:background="@drawable/log_in_bg"
-                android:padding="5dp"
-                android:textColor="@color/black"/>
+                android:padding="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -367,8 +366,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/black"
-                android:text="Introduce la posición" />
+                android:hint="Introduce la posición" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -461,7 +459,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
-                android:text="Introduce el ritmo"
+                android:hint="Introduce el ritmo"
                 android:fontFamily="@font/montserratmedium"
                 android:textColor="@color/black"/>
 
@@ -477,7 +475,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
-                android:text="Introduce el tiro"
+                android:hint="Introduce el tiro"
                 android:fontFamily="@font/montserratmedium"
                 android:textColor="@color/black" />
 
@@ -494,7 +492,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="Introduce el pase"
+                android:hint="Introduce el pase"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -510,7 +508,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="Introduce el regate"
+                android:hint="Introduce el regate"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -526,7 +524,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="Introduce la defensa"
+                android:hint="Introduce la defensa"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -542,7 +540,7 @@
                 android:background="@drawable/log_in_bg"
                 android:padding="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="Introduce el físico"
+                android:hint="Introduce el físico"
                 android:textColor="@color/black"/>
 
             <Button
