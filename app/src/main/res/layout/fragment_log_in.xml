@@ -42,6 +42,7 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:fontFamily="@font/montserratmedium"
+        android:textColor="@color/black"
         android:textColorHint="@color/Gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"

@@ -346,6 +346,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Introduce la media"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:background="@drawable/log_in_bg"
@@ -363,6 +364,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce la posición" />
@@ -458,6 +460,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:hint="Introduce el ritmo"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium" />
@@ -474,6 +477,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:hint="Introduce el tiro"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium" />
@@ -490,6 +494,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce el pase" />
@@ -506,6 +511,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce el regate" />
@@ -522,6 +528,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce la defensa" />
@@ -538,6 +545,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
                             android:padding="5dp"
+                            android:textColor="@color/black"
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce el físico" />
