@@ -13,12 +13,10 @@
         android:id="@+id/textView26"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:text="TÁCTICAS"
         android:textSize="36dp"
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/white"
-
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +56,7 @@
             android:id="@+id/button1"
             android:layout_width="111dp"
             android:layout_height="75dp"
-            android:backgroundTint="@color/azul_cian"
+            android:background="@drawable/colorbotoncuadrado"
             android:text="433(4)"
             android:fontFamily="@font/montserratmedium"
             android:enabled="true"
