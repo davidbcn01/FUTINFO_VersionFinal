@@ -5,7 +5,7 @@
     android:id="@+id/const4"
     android:layout_width="150dp"
     android:layout_height="150dp"
-    android:background="@drawable/cyan_white"
+    android:background="@drawable/cyan_dark_blue_mini_medium"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="10dp">
 

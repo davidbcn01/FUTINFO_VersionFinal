@@ -31,7 +31,7 @@
         android:layout_marginTop="120dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="400dp"
-        android:background="@drawable/texto_objetivos"
+        android:background="@drawable/cyan_dark_blue_big"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/const1"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
             android:layout_marginRight="20dp"
             android:gravity="center"
             android:text="Objetivos"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +55,9 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
+            android:id="@+id/imgOb"
             android:layout_width="159dp"
             android:layout_height="152dp"
-            android:src="@drawable/experiencia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView8"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         android:layout_marginTop="400dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="120dp"
-        android:background="@drawable/texto_objetivos"
+        android:background="@drawable/cyan_dark_blue_big"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/const2"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
             android:layout_marginRight="20dp"
             android:gravity="center"
             android:text="SBC"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -95,9 +95,9 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
+            android:id="@+id/imgSbc"
             android:layout_width="159dp"
             android:layout_height="152dp"
-            android:src="@drawable/objective"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/sbc"
             app:layout_constraintStart_toStartOf="parent"

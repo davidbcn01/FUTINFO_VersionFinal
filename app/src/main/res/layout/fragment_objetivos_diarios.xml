@@ -13,7 +13,7 @@
         android:layout_height="157dp"
         android:layout_marginTop="22dp"
 
-        android:background="@drawable/cyan_white"
+        android:background="@drawable/cyan_dark_blue_mini_medium"
         android:gravity="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

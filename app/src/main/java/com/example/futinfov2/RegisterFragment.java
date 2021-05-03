@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.futinfov2.databinding.FragmentRegisterBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
@@ -26,6 +29,7 @@ public class RegisterFragment extends Fragment {
     private FragmentRegisterBinding binding;
     private NavController navController;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore firestore;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class RegisterFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
         mAuth = FirebaseAuth.getInstance();
-
+        firestore = FirebaseFirestore.getInstance();
 
 
 
@@ -62,6 +66,10 @@ public class RegisterFragment extends Fragment {
                    Toast.makeText(getContext(),"Las contraseñas deben coincidir",Toast.LENGTH_SHORT).show();
                 }else {
                     mAuth.createUserWithEmailAndPassword(email,password);
+                     //String document = mAuth.getCurrentUser().getUid();
+
+                       // firestore.collection("usuarios").document(document).set(email);
+
                     navController.navigate(R.id.action_registerFragment_to_logInFragment);
                 }
 
