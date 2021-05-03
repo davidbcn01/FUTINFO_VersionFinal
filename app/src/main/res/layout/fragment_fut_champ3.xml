@@ -25,7 +25,7 @@
 
 
         <TextView
-            android:id="@+id/textView69"
+            android:id="@+id/EditText69"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -37,47 +37,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView70"
+        <EditText
+            android:id="@+id/EditText70"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="48dp"
             android:fontFamily="@font/montserratmedium"
-            android:text="Resultado: 2 - 3"
+            android:background="@drawable/log_in_bg"
+            android:hint="Resultado: 2 - 3"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView69" />
+            app:layout_constraintTop_toBottomOf="@+id/EditText69" />
 
-        <TextView
-            android:id="@+id/textView71"
+        <EditText
+            android:id="@+id/EditText71"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/log_in_bg"
             android:fontFamily="@font/montserratmedium"
-            android:text="Posesión: 53% - 47%"
+            android:hint="Posesión: 53% - 47%"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView70" />
+            app:layout_constraintTop_toBottomOf="@+id/EditText70" />
 
-        <TextView
-            android:id="@+id/textView72"
+        <EditText
+            android:id="@+id/EditText72"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/log_in_bg"
             android:fontFamily="@font/montserratmedium"
-            android:text="Tiros a puerta: 4 - 9"
+            android:hint="Tiros a puerta: 4 - 9"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView71" />
+            app:layout_constraintTop_toBottomOf="@+id/EditText71" />
 
         <TextView
-            android:id="@+id/textView73"
+            android:id="@+id/EditText73"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
@@ -87,7 +90,70 @@
             android:textSize="24sp"
             android:fontFamily="@font/montserratmedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView72" />
+            app:layout_constraintTop_toBottomOf="@+id/EditText72" />
+
+        <EditText
+            android:id="@+id/EditText74"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserratmedium"
+            android:background="@drawable/log_in_bg"
+            android:hint="Jugador: nºgoles"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditText73" />
+
+        <TextView
+            android:id="@+id/EditText76"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserratmedium"
+            android:text="Asistencias"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditText74" />
+
+        <EditText
+            android:id="@+id/EditText75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/log_in_bg"
+            android:fontFamily="@font/montserratmedium"
+            android:hint="Jugador: asistencias"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditText76" />
+
+        <EditText
+            android:id="@+id/EditText77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/log_in_bg"
+            android:fontFamily="@font/montserratmedium"
+            android:Hint="Paradas del portero: 2"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditText75" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
