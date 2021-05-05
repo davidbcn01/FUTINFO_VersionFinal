@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -13,8 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentRegisterBinding;
 import com.example.futinfov2.databinding.FragmentTacticas1Binding;
+import com.example.futinfov2.databinding.FragmentTacticasOfensivasBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
@@ -24,16 +29,24 @@ public class Tacticas1Fragment extends Fragment {
 
     private FragmentTacticas1Binding binding;
     private NavController navController;
+    // FragmentTacticasOfensivasBinding fragmentTacticasOfensivasBinding;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth mAuth;
+    private TacticasViewModel tacticasViewModel;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentTacticas1Binding.inflate(inflater, container, false)).getRoot();
     }
-    @SuppressLint("WrongConstant")
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        mAuth=FirebaseAuth.getInstance();
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
 
 
@@ -44,7 +57,9 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button1.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
+
             }
         });
 
@@ -56,6 +71,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button2.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -69,6 +85,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button3.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -82,6 +99,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button4.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -115,7 +133,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button20)
@@ -125,7 +143,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button30)
@@ -135,7 +153,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button40)
@@ -145,7 +163,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button50)
@@ -155,7 +173,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button60)
@@ -165,7 +183,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasDefensivasFragment);
+                navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.imageButton3)

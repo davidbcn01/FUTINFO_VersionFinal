@@ -41,21 +41,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_width="149dp"
-                    android:layout_height="86dp"
+                    android:id="@+id/ataque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/texto_objetivos"
                     android:gravity="center"
-                    android:text="Posesión"
+                    android:text=""
                     android:fontFamily="@font/montserratmedium"
                     android:textColor="@color/black"
                     android:textSize="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                    app:layout_constraintTop_toBottomOf="@+id/tituloataque" />
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/tituloataque"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Estilo ofensivo"
@@ -87,12 +88,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_width="210dp"
-                    android:layout_height="86dp"
+                    android:id="@+id/defensa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/texto_objetivos"
                     android:gravity="center"
-                    android:text="Presión fuerte"
+                    android:text=""
                     android:fontFamily="@font/montserratmedium"
                     android:textColor="@color/black"
                     android:textSize="30dp"
@@ -121,12 +123,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="86dp"
+                    android:id="@+id/laterales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/texto_objetivos"
                     android:gravity="center"
-                    android:text="Subir al ataque"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="30dp"
                     android:fontFamily="@font/montserratmedium"
@@ -155,12 +158,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_width="250dp"
-                    android:layout_height="86dp"
+                    android:id="@+id/centrocampistas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/texto_objetivos"
                     android:gravity="center"
-                    android:text="Apoyar en ataque"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="30dp"
                     android:fontFamily="@font/montserratmedium"
@@ -189,12 +193,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_width="230dp"
-                    android:layout_height="86dp"
+                    android:id="@+id/delanteros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/texto_objetivos"
                     android:gravity="center"
-                    android:text="Quedarse arriba"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="30dp"
                     android:fontFamily="@font/montserratmedium"
@@ -202,6 +207,40 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2336" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/formacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Formación"
+                    android:textColor="@color/azul_cian"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/montserratmedium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/formacionTactica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/texto_objetivos"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/montserratmedium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/formacion" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
