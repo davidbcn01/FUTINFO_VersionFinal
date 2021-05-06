@@ -16,6 +16,9 @@ import com.example.futinfov2.databinding.FragmentTacticasOfensivasBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class TacticasOfensivasFragment extends Fragment {
     private FragmentTacticasOfensivasBinding binding;
@@ -23,6 +26,7 @@ public class TacticasOfensivasFragment extends Fragment {
 
     private FirebaseFirestore db;
     private FirebaseAuth auth;
+    private List<Tactica> infoTacticas = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +83,29 @@ public class TacticasOfensivasFragment extends Fragment {
                 if (s.equals("442(2)")){
                     getTacticas("0eBkMc6LascNas8gzb1F");
                 }
+                db.collection("users").document(auth.getUid()).collection("tacticas").addSnapshotListener((value, error) -> {
+                    infoTacticas.clear();
+                    value.forEach(document ->{
+                        infoTacticas.add(new Tactica(document.getString("ataque"),
+                                document.getString("defensa"),
+                                document.getString("laterales"),
+                                document.getString("centrocampistas"),
+                                document.getString("delanteros"),
+                                document.getString("formacion"),
+                                document.getString("nombre")));
+                    });
+
+                    for(int i = 0; i<infoTacticas.size();i++){
+                        if(infoTacticas.get(i).getNombre().equals(s)){
+                            binding.formacionTactica.setText(infoTacticas.get(i).getFormacion());
+                            binding.ataque.setText(infoTacticas.get(i).getAtaque());
+                            binding.defensa.setText(infoTacticas.get(i).getDefensa());
+                            binding.laterales.setText(infoTacticas.get(i).getLaterales());
+                            binding.centrocampistas.setText(infoTacticas.get(i).getCentrocampistas());
+                            binding.delanteros.setText(infoTacticas.get(i).getDelanteros());
+                        }
+                    }
+                });
 
 
             }
@@ -100,4 +127,5 @@ public class TacticasOfensivasFragment extends Fragment {
 
         ));
     }
+
 }

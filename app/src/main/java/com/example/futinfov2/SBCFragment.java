@@ -40,8 +40,8 @@ public class SBCFragment extends Fragment {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-    SbcAdapter sbcAdapter = new SbcAdapter();
-    binding.recyclerView.setAdapter(sbcAdapter);
+        SbcAdapter sbcAdapter = new SbcAdapter();
+        binding.recyclerView.setAdapter(sbcAdapter);
         /*Glide.with(requireContext())
                 .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/iconos_app%2FproLeague.png?alt=media&token=3e6177f8-1c92-4360-9986-795c77676d4e")
                 .into(binding.img);
