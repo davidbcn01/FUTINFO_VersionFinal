@@ -7,15 +7,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.futinfov2.databinding.FragmentTacticas1Binding;
 import com.example.futinfov2.databinding.FragmentTacticasOfensivasBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -23,7 +21,8 @@ public class TacticasOfensivasFragment extends Fragment {
     private FragmentTacticasOfensivasBinding binding;
 
 
-    private FirebaseFirestore firebaseFirestore;
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +33,8 @@ public class TacticasOfensivasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
@@ -87,7 +87,7 @@ public class TacticasOfensivasFragment extends Fragment {
         }
 
     private void getTacticas(String document) {
-        firebaseFirestore.collection("tacticas").document(document).addSnapshotListener(((value, error) -> {
+        db.collection("tacticas").document(document).addSnapshotListener(((value, error) -> {
             Tactica tactica = new Tactica(value.getString("ataque"), value.getString("defensa"), value.getString("laterales"), value.getString("centrocampistas"), value.getString("delanteros"), value.getString("formacion"));
             binding.formacionTactica.setText(tactica.formacion);
             binding.ataque.setText(tactica.ataque);

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -25,6 +26,7 @@ public class InicioFragment extends Fragment {
     FragmentInicioBinding binding;
     private NavController navController;
     private FirebaseFirestore firebaseFirestore;
+    private TacticasViewModel tacticasViewModel;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentInicioBinding.inflate(inflater, container, false)).getRoot();
@@ -34,6 +36,7 @@ public class InicioFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
         firebaseFirestore = FirebaseFirestore.getInstance();
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
         firebaseFirestore.collection("jugadores").document("iUZSJOddr0oP8hL2NJJp").addSnapshotListener(((value, error) ->{
             Jugador jugador = new Jugador(value.getString("name"),value.getString("position"), Math.toIntExact(value.getLong("rating")),value.getString("country"),value.getString("team"),value.getString("face"),value.getString("card"));
             binding.position2.setText(jugador.posicion);
@@ -83,6 +86,7 @@ public class InicioFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button.getText());
                 navController.navigate(R.id.action_inicioFragment_to_tacticasOfensivasFragment);
             }
         });
@@ -94,7 +98,8 @@ public class InicioFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_inicioFragment_to_tacticasDefensivasFragment);
+                tacticasViewModel.setBoton((String) binding.button2.getText());
+                navController.navigate(R.id.action_inicioFragment_to_tacticasOfensivasFragment);
             }
         });
     }

@@ -47,9 +47,6 @@
             android:id="@+id/action_inicioFragment_to_tacticasOfensivasFragment"
             app:destination="@id/tacticasOfensivasFragment" />
         <action
-            android:id="@+id/action_inicioFragment_to_tacticasDefensivasFragment"
-            app:destination="@id/tacticasDefensivasFragment" />
-        <action
             android:id="@+id/action_inicioFragment_to_objetivosDiariosFragment"
             app:destination="@id/objetivosDiariosFragment" />
         <action
@@ -84,9 +81,6 @@
         <action
             android:id="@+id/action_tacticas1Fragment_to_tacticasOfensivasFragment"
             app:destination="@id/tacticasOfensivasFragment" />
-        <action
-            android:id="@+id/action_tacticas1Fragment_to_tacticasDefensivasFragment"
-            app:destination="@id/tacticasDefensivasFragment" />
     </fragment>
     <fragment
         android:id="@+id/objetivos1Fragment"
@@ -128,21 +122,6 @@
             app:destination="@id/tacticasEleccionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/tacticasNuevasFragment"
-        android:name="com.example.futinfov2.TacticasNuevasFragment"
-        android:label="fragment_tacticas_nuevas"
-        tools:layout="@layout/fragment_tacticas_nuevas" >
-        <action
-            android:id="@+id/action_tacticasNuevasFragment_to_tacticasDefensivasFragment"
-            app:destination="@id/tacticasDefensivasFragment" />
-        <action
-            android:id="@+id/action_tacticasNuevasFragment_to_tacticasOfensivasFragment"
-            app:destination="@id/tacticasOfensivasFragment" />
-        <action
-            android:id="@+id/action_tacticasNuevasFragment_to_tacticasFormacionFragment"
-            app:destination="@id/tacticasFormacionFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/tacticasOfensivasFragment"
         android:name="com.example.futinfov2.TacticasOfensivasFragment"
         android:label="fragment_tacticas_ofensivas"
@@ -153,14 +132,9 @@
         android:label="fragment_tacticas_eleccion"
         tools:layout="@layout/fragment_tacticas_eleccion" >
         <action
-            android:id="@+id/action_tacticasEleccionFragment_to_tacticasNuevasFragment"
-            app:destination="@id/tacticasNuevasFragment" />
+            android:id="@+id/action_tacticasEleccionFragment_to_tacticas1Fragment"
+            app:destination="@id/tacticas1Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/tacticasDefensivasFragment"
-        android:name="com.example.futinfov2.TacticasDefensivasFragment"
-        android:label="fragment_tacticas_defensivas"
-        tools:layout="@layout/fragment_tacticas_defensivas" />
     <fragment
         android:id="@+id/crearCarta2Fragment"
         android:name="com.example.futinfov2.CrearCarta2Fragment"
