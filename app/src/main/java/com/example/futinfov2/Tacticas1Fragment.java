@@ -110,6 +110,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button5.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -122,6 +123,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button6.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -133,6 +135,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button10.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -143,6 +146,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button20.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -153,6 +157,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button30.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -163,6 +168,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button40.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -173,6 +179,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button50.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });
@@ -183,6 +190,7 @@ public class Tacticas1Fragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.button60.getText());
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
             }
         });

@@ -42,66 +42,62 @@ public class TacticasOfensivasFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 if (s.equals("433(4)")){
-                    firebaseFirestore.collection("tacticas").document("0HSEgeF4kqZ2WkmtdTKh").addSnapshotListener(((value, error) ->{
-                        Tactica tactica = new Tactica(value.getString("ataque"),value.getString("defensa"), value.getString("laterales"),value.getString("centrocampistas"),value.getString("delanteros"),value.getString("formacion"));
-                        binding.formacionTactica.setText(tactica.formacion);
-                        binding.ataque.setText(tactica.ataque);
-                        binding.defensa.setText(tactica.defensa);
-                        binding.laterales.setText(tactica.laterales);
-                        binding.centrocampistas.setText(tactica.centrocampistas);
-                        binding.delanteros.setText(tactica.delanteros);
-
-                    }
-
-                    ));
+                    getTacticas("0HSEgeF4kqZ2WkmtdTKh");
 
                 }
                 if (s.equals("433(3)")){
-                    firebaseFirestore.collection("tacticas").document("7Ns423jBwKFUGvVmez2w").addSnapshotListener(((value, error) ->{
-                        Tactica tactica = new Tactica(value.getString("ataque"),value.getString("defensa"), value.getString("laterales"),value.getString("centrocampistas"),value.getString("delanteros"),value.getString("formacion"));
-                        binding.formacionTactica.setText(tactica.formacion);
-                        binding.ataque.setText(tactica.ataque);
-                        binding.defensa.setText(tactica.defensa);
-                        binding.laterales.setText(tactica.laterales);
-                        binding.centrocampistas.setText(tactica.centrocampistas);
-                        binding.delanteros.setText(tactica.delanteros);
-
-                    }
-
-                    ));
+                    getTacticas("7Ns423jBwKFUGvVmez2w");
 
                 }
                 if (s.equals("433(2)")){
-                    firebaseFirestore.collection("tacticas").document("IDeH0yRgXtGlwwSXjls2").addSnapshotListener(((value, error) ->{
-                        Tactica tactica = new Tactica(value.getString("ataque"),value.getString("defensa"), value.getString("laterales"),value.getString("centrocampistas"),value.getString("delanteros"),value.getString("formacion"));
-                        binding.formacionTactica.setText(tactica.formacion);
-                        binding.ataque.setText(tactica.ataque);
-                        binding.defensa.setText(tactica.defensa);
-                        binding.laterales.setText(tactica.laterales);
-                        binding.centrocampistas.setText(tactica.centrocampistas);
-                        binding.delanteros.setText(tactica.delanteros);
-
-                    }
-
-                    ));
+                    getTacticas("IDeH0yRgXtGlwwSXjls2");
                 }
                 if (s.equals("433")){
-                    firebaseFirestore.collection("tacticas").document("h9PUz6HBBzuIYGfKqBMl").addSnapshotListener(((value, error) ->{
-                        Tactica tactica = new Tactica(value.getString("ataque"),value.getString("defensa"), value.getString("laterales"),value.getString("centrocampistas"),value.getString("delanteros"),value.getString("formacion"));
-                        binding.formacionTactica.setText(tactica.formacion);
-                        binding.ataque.setText(tactica.ataque);
-                        binding.defensa.setText(tactica.defensa);
-                        binding.laterales.setText(tactica.laterales);
-                        binding.centrocampistas.setText(tactica.centrocampistas);
-                        binding.delanteros.setText(tactica.delanteros);
-
-                    }
-
-                    ));
+                    getTacticas("h9PUz6HBBzuIYGfKqBMl");
                 }
+                if (s.equals("4231")){
+                    getTacticas("pEpztR0uXIDi5dR4pYyW");
+                }
+                if (s.equals("4231(2)")){
+                    getTacticas("aIWmfThNzFW5MgZL9MCM");
+                }
+                if (s.equals("532")){
+                    getTacticas("YBmz1wj38ens5UYxE3SC");
+                }
+                if (s.equals("523")){
+                    getTacticas("Y71t6xtatsHOQmPQgxna");
+                }
+                if (s.equals("41212")){
+                    getTacticas("kH1eadEwWQBpdcQuuO9X");
+                }
+                if (s.equals("4141")){
+                    getTacticas("GdkhbubJNfl2ciVhyXjV");
+                }
+                if (s.equals("4141(2)")){
+                    getTacticas("oBZTGB93AlbHSg1r7dgL");
+                }
+                if (s.equals("442(2)")){
+                    getTacticas("0eBkMc6LascNas8gzb1F");
+                }
+
 
             }
         });
 
         }
+
+    private void getTacticas(String document) {
+        firebaseFirestore.collection("tacticas").document(document).addSnapshotListener(((value, error) -> {
+            Tactica tactica = new Tactica(value.getString("ataque"), value.getString("defensa"), value.getString("laterales"), value.getString("centrocampistas"), value.getString("delanteros"), value.getString("formacion"));
+            binding.formacionTactica.setText(tactica.formacion);
+            binding.ataque.setText(tactica.ataque);
+            binding.defensa.setText(tactica.defensa);
+            binding.laterales.setText(tactica.laterales);
+            binding.centrocampistas.setText(tactica.centrocampistas);
+            binding.delanteros.setText(tactica.delanteros);
+
+        }
+
+        ));
     }
+}
