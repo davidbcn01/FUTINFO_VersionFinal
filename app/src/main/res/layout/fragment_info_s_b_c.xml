@@ -24,9 +24,10 @@
         android:id="@+id/fotoSBC"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="200dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="410dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,13 +36,14 @@
         android:id="@+id/SBCname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="35dp"
         android:text=""
-        android:textSize="30dp"
         android:textColor="@color/white"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fotoSBC"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -67,6 +69,7 @@
 
 
         android:layout_marginBottom="20dp"
+
         android:text="Requisitos:"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/textoRequisitos"
@@ -76,13 +79,15 @@
 
     <TextView
         android:id="@+id/textoRequisitos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginBottom="112dp"
-
+        android:layout_marginRight="70dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/recompensas"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@+id/checkBox8"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -100,9 +105,12 @@
 
     <ImageView
         android:id="@+id/sobre"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="460dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/sobre"
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
@@ -110,6 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/recompensas" />
 
     <TextView
+        android:id="@+id/textoRecompensas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"

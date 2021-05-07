@@ -3,7 +3,6 @@ package com.example.futinfov2;
 public class SBC {
     public String nombre;
     public String imagen;
-    boolean hecho;
     public String descripción;
     public String requisitos;
     public String recompensa;
@@ -30,13 +29,7 @@ public class SBC {
         this.imagen = imagen;
     }
 
-    public boolean isHecho() {
-        return hecho;
-    }
 
-    public void setHecho(boolean hecho) {
-        this.hecho = hecho;
-    }
 
     public String getDescripción() {
         return descripción;
@@ -70,10 +63,9 @@ public class SBC {
         this.fotoRecompensa = fotoRecompensa;
     }
 
-    public SBC(String nombre, String imagen, boolean hecho, String descripción, String requisitos, String recompensa, String fotoRecompensa) {
+    public SBC(String nombre, String imagen, String descripción, String requisitos, String recompensa, String fotoRecompensa) {
         this.nombre = nombre;
         this.imagen = imagen;
-        this.hecho = hecho;
         this.descripción = descripción;
         this.requisitos = requisitos;
         this.recompensa = recompensa;

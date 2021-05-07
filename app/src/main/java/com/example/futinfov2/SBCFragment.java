@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,7 +46,7 @@ public class SBCFragment extends Fragment {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         navController = Navigation.findNavController(view);
-
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
         SbcAdapter sbcAdapter = new SbcAdapter();
         binding.recyclerView.setAdapter(sbcAdapter);
         /*Glide.with(requireContext())
@@ -83,13 +85,23 @@ public class SBCFragment extends Fragment {
         SBC sbc = SBCs.get(position);
         holder.binding.nombreSBC.setText(sbc.nombre);
         Glide.with(requireView()).load(sbc.imagen).into(holder.binding.img);
+
             holder.binding.const4.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View v) {
                     tacticasViewModel.setBoton((String) holder.binding.nombreSBC.getText());
+                    /*tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+
+                        @Override
+                        public void onChanged(String s) {
+                            System.out.println(s);
+                        }
+                    });
+                    */
+
                     //guarda bien el valor con el set
-                    navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
+                    navController.navigate(R.id.action_SBCFragment_to_infoSBCFragment);
                 }
             });
         }

@@ -31,7 +31,8 @@ public class InfoSBCFragment extends Fragment {
     boolean hecho = false;
     private List<SBC> listaSBC = new ArrayList<>();
     private List<SBC> listaSBC2 = new ArrayList<>();
-    private String imagen;
+    private String imagen,imagenSobre;
+
 
 
     @Override
@@ -53,38 +54,43 @@ public class InfoSBCFragment extends Fragment {
 
             @Override
             public void onChanged(String s) {
-                if(binding.checkBox8.isChecked()) hecho = true;
-
-                db.collection("users").document(auth.getUid()).collection("sbcDone").add(hecho);
+                //if(binding.checkBox8.isChecked()) hecho = true;
+               // System.out.println(s); llega bien el nombre
+               // db.collection("users").document(auth.getUid()).collection("sbcDone").add(hecho);
 
                 db.collection("SBC").addSnapshotListener((value, error) -> {
                     listaSBC.clear();
                     value.forEach(document ->{
                         listaSBC.add(new SBC(document.getString("nombre"),
                                 document.getString("imgUrl"),
-                                document.getBoolean("hecho"),
                                 document.getString("descripcion"),
                                 document.getString("requisitos"),
                                 document.getString("recompensa"),
                                 document.getString("imgRecom")));
                     });
+
                     for(int i = 0; i<listaSBC.size();i++){
+                        System.out.println(listaSBC.get(i).getRequisitos());
                         if(listaSBC.get(i).getNombre().equals(s)){
                            binding.SBCname.setText(listaSBC.get(i).getNombre());
                             binding.descripcion.setText(listaSBC.get(i).getDescripción());
                             binding.textoRequisitos.setText(listaSBC.get(i).getRequisitos());
-                            binding.recompensas.setText(listaSBC.get(i).getRecompensa());
+                            binding.textoRecompensas.setText(listaSBC.get(i).getRecompensa());
+
+                            imagenSobre =listaSBC.get(i).getFotoRecompensa();
 
                             Glide.with(requireContext())
-                                    .load(listaSBC.get(i).getFotoRecompensa())
+                                    .load(imagenSobre)
                                     .into(binding.sobre);
                             imagen = listaSBC.get(i).getImagen();
+
                             Glide.with(requireContext())
                                     .load(imagen)
                                     .into(binding.fotoSBC);
 
                         }
                     }
+                    /*
                     value.forEach(document->{
                         listaSBC2.clear();
                         listaSBC2.add(new SBC(document.getString("nombre"),document.getString("imgUrl")));
@@ -92,10 +98,11 @@ public class InfoSBCFragment extends Fragment {
                     for(int i = 0; i<listaSBC2.size();i++){
                         if(listaSBC2.get(i).getNombre().equals(s) && listaSBC2.get(i).getImagen().equals(imagen)){
                           //
-                            listaSBC2.get(i).isHecho();
+
 
                         }
                     }
+                    */
                 });
             }
         });
