@@ -54,6 +54,7 @@ public class Tacticas1Fragment extends Fragment {
         navController = Navigation.findNavController(view);
         firebaseFirestore = FirebaseFirestore.getInstance();
         mAuth=FirebaseAuth.getInstance();
+
         tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
 
@@ -81,13 +82,7 @@ public class Tacticas1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 tacticasViewModel.setBoton((String) binding.button1.getText());
-                tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
 
-                            @Override
-                            public void onChanged(String s) {
-                                System.out.println(s);
-                            }
-                        });
                 navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
 
             }

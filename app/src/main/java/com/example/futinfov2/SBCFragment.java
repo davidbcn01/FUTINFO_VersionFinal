@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentCrearTuCartaBinding;
 import com.example.futinfov2.databinding.FragmentSBCBinding;
 import com.example.futinfov2.databinding.ViewholderSbcBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -26,9 +28,11 @@ import java.util.List;
 public class SBCFragment extends Fragment {
     private FragmentSBCBinding binding;
     private NavController navController;
-    private FirebaseStorage firebaseStorage;
     private FirebaseFirestore firebaseFirestore;
+    private TacticasViewModel tacticasViewModel;
+
     private List<SBC> SBCs = new ArrayList<>();
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentSBCBinding.inflate(inflater, container, false)).getRoot();
@@ -39,6 +43,7 @@ public class SBCFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
+        navController = Navigation.findNavController(view);
 
         SbcAdapter sbcAdapter = new SbcAdapter();
         binding.recyclerView.setAdapter(sbcAdapter);
@@ -78,6 +83,15 @@ public class SBCFragment extends Fragment {
         SBC sbc = SBCs.get(position);
         holder.binding.nombreSBC.setText(sbc.nombre);
         Glide.with(requireView()).load(sbc.imagen).into(holder.binding.img);
+            holder.binding.const4.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    tacticasViewModel.setBoton((String) holder.binding.nombreSBC.getText());
+                    //guarda bien el valor con el set
+                    navController.navigate(R.id.action_tacticas1Fragment_to_tacticasOfensivasFragment);
+                }
+            });
         }
 
         @Override

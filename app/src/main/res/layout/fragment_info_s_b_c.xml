@@ -21,23 +21,23 @@
     tools:context=".InfoSBCFragment">
 
     <ImageView
+        android:id="@+id/fotoSBC"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginRight="200dp"
         android:layout_marginBottom="400dp"
-        android:src="@drawable/objective"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView68"
+        android:id="@+id/SBCname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="35dp"
-        android:text="Pro League"
+        android:text=""
         android:textSize="30dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,14 +46,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView67"
+        android:id="@+id/descripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
 
         android:layout_marginBottom="16dp"
-        android:text="@string/InfoSBC"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/requisitos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
-        android:text="- Requisito1"
+
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/recompensas"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,8 +104,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="460dp"
         android:layout_marginBottom="20dp"
-
-        android:src="@drawable/sobre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="48dp"
-        android:text="Sobre de 125.000 monedas"
+
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

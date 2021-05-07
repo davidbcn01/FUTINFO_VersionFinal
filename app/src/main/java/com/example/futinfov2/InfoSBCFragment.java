@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -12,68 +14,90 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InfoSBCFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.bumptech.glide.Glide;
+import com.example.futinfov2.databinding.FragmentInfoSBCBinding;
+import com.example.futinfov2.databinding.FragmentTacticasOfensivasBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class InfoSBCFragment extends Fragment {
+    private FragmentInfoSBCBinding binding;
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
+    boolean hecho = false;
+    private List<SBC> listaSBC = new ArrayList<>();
+    private List<SBC> listaSBC2 = new ArrayList<>();
+    private String imagen;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public InfoSBCFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InfoSBCFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InfoSBCFragment newInstance(String param1, String param2) {
-        InfoSBCFragment fragment = new InfoSBCFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return (binding = FragmentInfoSBCBinding.inflate(inflater, container, false)).getRoot();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info_s_b_c, container, false);
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // ojo BINDING!
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
-        //TextView textView = new TextView();
 
-        //textView.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"  );
+        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+
+            @Override
+            public void onChanged(String s) {
+                if(binding.checkBox8.isChecked()) hecho = true;
+
+                db.collection("users").document(auth.getUid()).collection("sbcDone").add(hecho);
+
+                db.collection("SBC").addSnapshotListener((value, error) -> {
+                    listaSBC.clear();
+                    value.forEach(document ->{
+                        listaSBC.add(new SBC(document.getString("nombre"),
+                                document.getString("imgUrl"),
+                                document.getBoolean("hecho"),
+                                document.getString("descripcion"),
+                                document.getString("requisitos"),
+                                document.getString("recompensa"),
+                                document.getString("imgRecom")));
+                    });
+                    for(int i = 0; i<listaSBC.size();i++){
+                        if(listaSBC.get(i).getNombre().equals(s)){
+                           binding.SBCname.setText(listaSBC.get(i).getNombre());
+                            binding.descripcion.setText(listaSBC.get(i).getDescripción());
+                            binding.textoRequisitos.setText(listaSBC.get(i).getRequisitos());
+                            binding.recompensas.setText(listaSBC.get(i).getRecompensa());
+
+                            Glide.with(requireContext())
+                                    .load(listaSBC.get(i).getFotoRecompensa())
+                                    .into(binding.sobre);
+                            imagen = listaSBC.get(i).getImagen();
+                            Glide.with(requireContext())
+                                    .load(imagen)
+                                    .into(binding.fotoSBC);
+
+                        }
+                    }
+                    value.forEach(document->{
+                        listaSBC2.clear();
+                        listaSBC2.add(new SBC(document.getString("nombre"),document.getString("imgUrl")));
+                    });
+                    for(int i = 0; i<listaSBC2.size();i++){
+                        if(listaSBC2.get(i).getNombre().equals(s) && listaSBC2.get(i).getImagen().equals(imagen)){
+                          //
+                            listaSBC2.get(i).isHecho();
+
+                        }
+                    }
+                });
+            }
+        });
     }
 }
