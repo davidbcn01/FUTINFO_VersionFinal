@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.futinfov2.databinding.FragmentObjetivos1Binding;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class Objetivos1Fragment extends Fragment {
     FragmentObjetivos1Binding binding;
     private NavController navController;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentObjetivos1Binding.inflate(inflater, container, false)).getRoot();
