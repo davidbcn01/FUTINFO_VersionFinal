@@ -49,9 +49,6 @@
         <action
             android:id="@+id/action_inicioFragment_to_objetivosDiariosFragment"
             app:destination="@id/objetivosDiariosFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_objetivosJugadorFragment"
-            app:destination="@id/objetivosJugadorFragment" />
     </fragment>
     <fragment
         android:id="@+id/jugadoresValiososFragment"
@@ -91,9 +88,6 @@
             android:id="@+id/action_objetivos1Fragment_to_objetivosDiariosFragment"
             app:destination="@id/objetivosDiariosFragment" />
         <action
-            android:id="@+id/action_objetivos1Fragment_to_objetivosJugadorFragment"
-            app:destination="@id/objetivosJugadorFragment" />
-        <action
             android:id="@+id/action_objetivos1Fragment_to_objetivosHitosFragment"
             app:destination="@id/objetivosHitosFragment" />
     </fragment>
@@ -102,11 +96,6 @@
         android:name="com.example.futinfov2.ObjetivosDiariosFragment"
         android:label="fragment_objetivos_diarios"
         tools:layout="@layout/fragment_objetivos_diarios" />
-    <fragment
-        android:id="@+id/objetivosJugadorFragment"
-        android:name="com.example.futinfov2.ObjetivosJugadorFragment"
-        android:label="fragment_objetivos_jugador"
-        tools:layout="@layout/fragment_objetivos_jugador" />
     <fragment
         android:id="@+id/objetivosHitosFragment"
         android:name="com.example.futinfov2.ObjetivosHitosFragment"
