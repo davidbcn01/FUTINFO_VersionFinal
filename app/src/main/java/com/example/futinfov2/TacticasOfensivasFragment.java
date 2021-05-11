@@ -22,8 +22,6 @@ import java.util.List;
 
 public class TacticasOfensivasFragment extends Fragment {
     private FragmentTacticasOfensivasBinding binding;
-
-
     private FirebaseFirestore db;
     private FirebaseAuth auth;
     private List<Tactica> infoTacticas = new ArrayList<>();

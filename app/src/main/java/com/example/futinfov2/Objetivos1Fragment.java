@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Objetivos1Fragment extends Fragment {
     FragmentObjetivos1Binding binding;
     private NavController navController;
+    private TacticasViewModel tacticasViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,25 +30,28 @@ public class Objetivos1Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
-
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
 
         binding.textView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tacticasViewModel.setBoton((String) binding.textView7.getText());
                 navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });
         binding.textView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosJugadorFragment);
+                tacticasViewModel.setBoton((String) binding.textView8.getText());
+                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });
         binding.textView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosDiariosFragment);
+                tacticasViewModel.setBoton((String) binding.textView9.getText());
+                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });
 

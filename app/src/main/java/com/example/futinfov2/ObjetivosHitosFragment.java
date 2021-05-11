@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,19 +42,52 @@ public class ObjetivosHitosFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         firebaseFirestore = FirebaseFirestore.getInstance();
         navController = Navigation.findNavController(view);
-       ObjetivosAdapter objetivosAdapter = new ObjetivosAdapter();
+        TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
+        ObjetivosAdapter objetivosAdapter = new ObjetivosAdapter();
         binding.recyclerView.setAdapter(objetivosAdapter);
 
-        firebaseFirestore.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
-            objetivos.clear();
-            value.forEach(document ->{
-                objetivos.add(new Objetivo(document.getString("titulo"),
-                        document.getString("descripcion"),
-                        document.getString("recompensa"),
-                        document.getString("objetivo")));
-            });
-            objetivosAdapter.notifyDataSetChanged();
+
+        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+
+            @Override
+            public void onChanged(String s) {
+                if(s.equals("Hitos")){
+                    binding.encabezado.setText(s.toUpperCase());
+                    firebaseFirestore.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
+                        objetivos.clear();
+                        value.forEach(document ->{
+                            objetivos.add(new Objetivo(document.getString("titulo"),
+                                    document.getString("descripcion"),
+                                    document.getString("recompensa"),
+                                    document.getString("objetivo")));
+                        });
+                        objetivosAdapter.notifyDataSetChanged();
+                    });
+                }
+
+                if(s.equals("Jugador de liga")){
+                  binding.encabezado.setText(s.toUpperCase());
+                    firebaseFirestore.collection("objetivos").document("kz5BAjAL9T9zU0gHgCiF").collection("liga").addSnapshotListener((value, error) -> {
+                        objetivos.clear();
+                        value.forEach(document ->{
+                            objetivos.add(new Objetivo(document.getString("titulo"),
+                                    document.getString("descripcion"),
+                                    document.getString("recompensa"),
+                                    document.getString("objetivo")));
+                        });
+                        objetivosAdapter.notifyDataSetChanged();
+                    });
+
+
+                }
+
+                if (s.equals("Objetivos diarios")){
+                    binding.encabezado.setText(s.toUpperCase());
+
+                }
+            }
         });
+
 
     }
     class ObjViewHolder extends RecyclerView.ViewHolder {
