@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_inicioFragment_to_objetivosDiariosFragment"
             app:destination="@id/objetivosDiariosFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_objetivosHitosFragment"
+            app:destination="@id/objetivosHitosFragment" />
     </fragment>
     <fragment
         android:id="@+id/jugadoresValiososFragment"

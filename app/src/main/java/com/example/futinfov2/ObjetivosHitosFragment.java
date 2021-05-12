@@ -15,11 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bumptech.glide.Glide;
-import com.example.futinfov2.databinding.FragmentObjetivos1Binding;
 import com.example.futinfov2.databinding.FragmentObjetivosHitosBinding;
 import com.example.futinfov2.databinding.ViewholderObjetivosNumBinding;
-import com.example.futinfov2.databinding.ViewholderSbcBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -28,8 +26,9 @@ import java.util.List;
 
 public class ObjetivosHitosFragment extends Fragment {
     private NavController navController;
-    private FirebaseFirestore firebaseFirestore;
+    private FirebaseFirestore db;
     private FragmentObjetivosHitosBinding binding;
+    private FirebaseAuth mAuth;
     private List<Objetivo> objetivos = new ArrayList<>();
 
     @Override
@@ -40,57 +39,68 @@ public class ObjetivosHitosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         navController = Navigation.findNavController(view);
+        mAuth = FirebaseAuth.getInstance();
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
         ObjetivosAdapter objetivosAdapter = new ObjetivosAdapter();
         binding.recyclerView.setAdapter(objetivosAdapter);
 
 
-        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+        tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), new Observer<String>() {
 
             @Override
-            public void onChanged(String s) {
-                if(s.equals("Hitos")){
-                    binding.encabezado.setText(s.toUpperCase());
-                    firebaseFirestore.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
-                        objetivos.clear();
-                        value.forEach(document ->{
-                            objetivos.add(new Objetivo(document.getString("titulo"),
-                                    document.getString("descripcion"),
-                                    document.getString("recompensa"),
-                                    document.getString("objetivo")));
+            public void onChanged(String idSBC) {
+                switch (idSBC) {
+                    case "Hitos":
+                        binding.encabezado.setText(idSBC.toUpperCase());
+                        db.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
+                            objetivos.clear();
+                            value.forEach(document -> {
+                                objetivos.add(new Objetivo(document));
+                            });
+                            objetivosAdapter.notifyDataSetChanged();
                         });
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-                }
 
-                if(s.equals("Jugador de liga")){
-                  binding.encabezado.setText(s.toUpperCase());
-                    firebaseFirestore.collection("objetivos").document("kz5BAjAL9T9zU0gHgCiF").collection("liga").addSnapshotListener((value, error) -> {
-                        objetivos.clear();
-                        value.forEach(document ->{
-                            objetivos.add(new Objetivo(document.getString("titulo"),
-                                    document.getString("descripcion"),
-                                    document.getString("recompensa"),
-                                    document.getString("objetivo")));
+                        binding.button16.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                //te has quedado por aqui bobo
+                            db.collection("users").document(mAuth.getUid()).collection("ObjetivosHitos");
+                            }
                         });
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
+
+                        break;
+                    case "Jugador de liga":
+                        binding.encabezado.setText(idSBC.toUpperCase());
+                        db.collection("objetivos").document("kz5BAjAL9T9zU0gHgCiF").collection("liga").addSnapshotListener((value, error) -> {
+                            objetivos.clear();
+                            value.forEach(document -> {
+                                objetivos.add(new Objetivo(document));
+                            });
+                            objetivosAdapter.notifyDataSetChanged();
+                        });
 
 
-                }
+                        break;
+                    case "Objetivos diarios":
+                        binding.encabezado.setText(idSBC.toUpperCase());
+                        db.collection("objetivos").document("PYOIkdC5n5m1QYob4EgD").collection("objetivosDiarios").addSnapshotListener((value, error) -> {
+                            objetivos.clear();
+                            value.forEach(document -> {
+                                objetivos.add(new Objetivo(document));
+                            });
+                            objetivosAdapter.notifyDataSetChanged();
+                        });
 
-                if (s.equals("Objetivos diarios")){
-                    binding.encabezado.setText(s.toUpperCase());
-
+                        break;
                 }
             }
         });
-
-
     }
-    class ObjViewHolder extends RecyclerView.ViewHolder {
+
+    static class ObjViewHolder extends RecyclerView.ViewHolder {
         ViewholderObjetivosNumBinding binding;
 
         public ObjViewHolder(ViewholderObjetivosNumBinding binding) {
@@ -98,21 +108,27 @@ public class ObjetivosHitosFragment extends Fragment {
             this.binding = binding;
         }
     }
-    class ObjetivosAdapter extends RecyclerView.Adapter<ObjViewHolder>{
+
+    class ObjetivosAdapter extends RecyclerView.Adapter<ObjViewHolder> {
 
         @NonNull
         @Override
         public ObjViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ObjViewHolder(ViewholderObjetivosNumBinding.inflate(getLayoutInflater(),parent,false));
+            return new ObjViewHolder(ViewholderObjetivosNumBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull ObjViewHolder holder, int position) {
             Objetivo objetivo = objetivos.get(position);
-           holder.binding.titulo.setText(objetivo.getTitulo());
-           holder.binding.descrip.setText(objetivo.getDescripcion());
-           holder.binding.reward.setText(objetivo.getRecompensa());
-           holder.binding.objetivoNum.setText(objetivo.getObjetivo());
+
+            holder.binding.titulo.setText(objetivo.getTitulo());
+            holder.binding.descrip.setText(objetivo.getDescripcion());
+            holder.binding.reward.setText(objetivo.getRecompensa());
+            holder.binding.objetivoNum.setText(objetivo.getObjetivo());
+
+
+
+
 
         }
 

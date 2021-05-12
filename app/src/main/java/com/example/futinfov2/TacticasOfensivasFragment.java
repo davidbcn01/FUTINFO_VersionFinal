@@ -40,7 +40,7 @@ public class TacticasOfensivasFragment extends Fragment {
 
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
-        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+        tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 if (s.equals("433(4)")){

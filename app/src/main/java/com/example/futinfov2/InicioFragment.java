@@ -1,6 +1,5 @@
 package com.example.futinfov2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -70,13 +68,15 @@ public class InicioFragment extends Fragment {
         binding.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_inicioFragment_to_objetivosJugadorFragment);
+                tacticasViewModel.setIdSBC("Hitos");
+                navController.navigate(R.id.action_inicioFragment_to_objetivosHitosFragment);
             }
         });
         binding.imageView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_inicioFragment_to_objetivosDiariosFragment);
+                tacticasViewModel.setIdSBC("Objetivos diarios");
+                navController.navigate(R.id.action_inicioFragment_to_objetivosHitosFragment);
             }
         });
         PushDownAnim.setPushDownAnimTo( binding.button)
@@ -86,7 +86,7 @@ public class InicioFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button.getText());
+                tacticasViewModel.setIdSBC((String) binding.button.getText());
                 navController.navigate(R.id.action_inicioFragment_to_tacticasOfensivasFragment);
             }
         });
@@ -98,7 +98,7 @@ public class InicioFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button2.getText());
+                tacticasViewModel.setIdSBC((String) binding.button2.getText());
                 navController.navigate(R.id.action_inicioFragment_to_tacticasOfensivasFragment);
             }
         });

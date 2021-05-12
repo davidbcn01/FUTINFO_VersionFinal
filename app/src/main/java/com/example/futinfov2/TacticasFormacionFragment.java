@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.futinfov2.databinding.FragmentTacticas1Binding;
 import com.example.futinfov2.databinding.FragmentTacticasFormacionBinding;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
@@ -43,7 +42,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button1.getText());
+                tacticasViewModel.setIdSBC((String) binding.button1.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -54,7 +53,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button2.getText());
+                tacticasViewModel.setIdSBC((String) binding.button2.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -65,7 +64,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button3.getText());
+                tacticasViewModel.setIdSBC((String) binding.button3.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -76,7 +75,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button4.getText());
+                tacticasViewModel.setIdSBC((String) binding.button4.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -87,7 +86,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button5.getText());
+                tacticasViewModel.setIdSBC((String) binding.button5.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -98,7 +97,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button6.getText());
+                tacticasViewModel.setIdSBC((String) binding.button6.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -110,7 +109,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button7.getText());
+                tacticasViewModel.setIdSBC((String) binding.button7.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -121,7 +120,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button8.getText());
+                tacticasViewModel.setIdSBC((String) binding.button8.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -132,7 +131,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button9.getText());
+                tacticasViewModel.setIdSBC((String) binding.button9.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -143,7 +142,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button10.getText());
+                tacticasViewModel.setIdSBC((String) binding.button10.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -154,7 +153,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button11.getText());
+                tacticasViewModel.setIdSBC((String) binding.button11.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -165,7 +164,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button12.getText());
+                tacticasViewModel.setIdSBC((String) binding.button12.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -176,7 +175,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button13.getText());
+                tacticasViewModel.setIdSBC((String) binding.button13.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -187,7 +186,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button14.getText());
+                tacticasViewModel.setIdSBC((String) binding.button14.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });
@@ -198,7 +197,7 @@ public class TacticasFormacionFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.button15.getText());
+                tacticasViewModel.setIdSBC((String) binding.button15.getText());
                 navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
             }
         });

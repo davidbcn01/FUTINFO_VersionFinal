@@ -10,12 +10,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.futinfov2.databinding.FragmentRegisterBinding;
 import com.example.futinfov2.databinding.FragmentTacticasEleccionBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -51,7 +49,7 @@ public class TacticasEleccionFragment extends Fragment {
 
 
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
-        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+        tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 formacion = s;

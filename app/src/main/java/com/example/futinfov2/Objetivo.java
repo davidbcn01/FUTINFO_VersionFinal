@@ -1,16 +1,27 @@
 package com.example.futinfov2;
 
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 public class Objetivo {
     private String titulo;
     private String descripcion;
     private String recompensa;
     private String objetivo;
+    public String idSBCD;
 
     public Objetivo(String titulo, String descripcion, String recompensa, String objetivo) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.recompensa = recompensa;
         this.objetivo = objetivo;
+    }
+
+    public Objetivo(QueryDocumentSnapshot document) {
+        this.idSBCD = document.getId();
+        this.titulo = document.getString("titulo");
+        this.descripcion = document.getString("descripcion");
+        this.recompensa = document.getString("recompensa");
+        this.objetivo = document.getString("objetivo");
     }
 
     public String getTitulo() {

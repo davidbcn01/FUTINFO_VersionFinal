@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.futinfov2.databinding.FragmentObjetivos1Binding;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class Objetivos1Fragment extends Fragment {
@@ -36,21 +35,21 @@ public class Objetivos1Fragment extends Fragment {
         binding.textView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.textView7.getText());
+                tacticasViewModel.setIdSBC((String) binding.textView7.getText());
                 navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });
         binding.textView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.textView8.getText());
+                tacticasViewModel.setIdSBC((String) binding.textView8.getText());
                 navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });
         binding.textView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setBoton((String) binding.textView9.getText());
+                tacticasViewModel.setIdSBC((String) binding.textView9.getText());
                 navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
             }
         });

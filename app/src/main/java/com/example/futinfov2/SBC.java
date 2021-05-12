@@ -1,14 +1,21 @@
 package com.example.futinfov2;
 
 public class SBC {
+    public String idSBCD;
     public String nombre;
     public String imagen;
     public String descripción;
     public String requisitos;
     public String recompensa;
     public String fotoRecompensa;
+    public boolean hecho;
 
-    public SBC(String nombre, String imagen) {
+    public SBC(boolean hecho) {
+        this.hecho = hecho;
+    }
+
+    public SBC(String idSBC, String nombre, String imagen) {
+        this.idSBCD = idSBC;
         this.nombre = nombre;
         this.imagen = imagen;
     }

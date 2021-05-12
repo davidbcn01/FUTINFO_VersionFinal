@@ -8,15 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.CompoundButton;
 
 import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentInfoSBCBinding;
-import com.example.futinfov2.databinding.FragmentTacticasOfensivasBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,9 +27,8 @@ public class InfoSBCFragment extends Fragment {
     private FirebaseFirestore db;
     private FirebaseAuth auth;
     boolean hecho = false;
-    private List<SBC> listaSBC = new ArrayList<>();
-    private List<SBC> listaSBC2 = new ArrayList<>();
     private String imagen,imagenSobre;
+    SBC sbc2;
 
 
 
@@ -50,61 +47,58 @@ public class InfoSBCFragment extends Fragment {
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
 
-        tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
+        tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), idSBC -> {
+            //if(binding.checkBox8.isChecked()) hecho = true;
+           // System.out.println(s); llega bien el nombre
+           // db.collection("users").document(auth.getUid()).collection("sbcDone").add(hecho);
+            //String nombre, String imagen, String descripción, String requisitos, String recompensa, String fotoRecompensa
 
-            @Override
-            public void onChanged(String s) {
-                //if(binding.checkBox8.isChecked()) hecho = true;
-               // System.out.println(s); llega bien el nombre
-               // db.collection("users").document(auth.getUid()).collection("sbcDone").add(hecho);
+            db.collection("SBC").document(idSBC).addSnapshotListener((value, error) -> {
+                SBC sbc = new SBC(value.getString("nombre"),value.getString("imgUrl"),value.getString("descripcion"),value.getString("requisitos"),value.getString("recompensa"),value.getString("imgRecom"));
+                       binding.SBCname.setText(sbc.getNombre());
+                        binding.descripcion.setText(sbc.getDescripción());
+                        binding.textoRequisitos.setText(sbc.getRequisitos());
+                        binding.textoRecompensas.setText(sbc.getRecompensa());
 
-                db.collection("SBC").addSnapshotListener((value, error) -> {
-                    listaSBC.clear();
-                    value.forEach(document ->{
-                        listaSBC.add(new SBC(document.getString("nombre"),
-                                document.getString("imgUrl"),
-                                document.getString("descripcion"),
-                                document.getString("requisitos"),
-                                document.getString("recompensa"),
-                                document.getString("imgRecom")));
+                        imagenSobre =sbc.getFotoRecompensa();
+
+                        Glide.with(requireContext())
+                                .load(imagenSobre)
+                                .into(binding.sobre);
+                        imagen = sbc.getImagen();
+
+                        Glide.with(requireContext())
+                                .load(imagen)
+                                .into(binding.fotoSBC);
+
                     });
 
-                    for(int i = 0; i<listaSBC.size();i++){
-                        System.out.println(listaSBC.get(i).getRequisitos());
-                        if(listaSBC.get(i).getNombre().equals(s)){
-                           binding.SBCname.setText(listaSBC.get(i).getNombre());
-                            binding.descripcion.setText(listaSBC.get(i).getDescripción());
-                            binding.textoRequisitos.setText(listaSBC.get(i).getRequisitos());
-                            binding.textoRecompensas.setText(listaSBC.get(i).getRecompensa());
+            binding.checkBox8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                            imagenSobre =listaSBC.get(i).getFotoRecompensa();
-
-                            Glide.with(requireContext())
-                                    .load(imagenSobre)
-                                    .into(binding.sobre);
-                            imagen = listaSBC.get(i).getImagen();
-
-                            Glide.with(requireContext())
-                                    .load(imagen)
-                                    .into(binding.fotoSBC);
-
-                        }
+                    if (isChecked) {
+                        hecho = true;
+                        sbc2 = new SBC(hecho);
+                        // coll usurios, document (idusurio).colle (sbc).docum(idsbc)
+                        db.collection("users").document(auth.getUid()).collection("SBC").document(idSBC).set(sbc2);
+                    }else{
+                        sbc2 = new SBC(hecho);
+                        db.collection("users").document(auth.getUid()).collection("SBC").document(idSBC).set(sbc2);
                     }
-                    /*
-                    value.forEach(document->{
-                        listaSBC2.clear();
-                        listaSBC2.add(new SBC(document.getString("nombre"),document.getString("imgUrl")));
-                    });
-                    for(int i = 0; i<listaSBC2.size();i++){
-                        if(listaSBC2.get(i).getNombre().equals(s) && listaSBC2.get(i).getImagen().equals(imagen)){
-                          //
+                }
+            });
 
 
-                        }
-                    }
-                    */
-                });
-            }
+
+
+            db.collection("users").document(auth.getUid()).collection("SBC").document(idSBC).addSnapshotListener(((value, error) -> {
+               boolean realizado= value.getBoolean("hecho");
+
+                   binding.checkBox8.setChecked(realizado);
+
+            }));
+
         });
     }
 }

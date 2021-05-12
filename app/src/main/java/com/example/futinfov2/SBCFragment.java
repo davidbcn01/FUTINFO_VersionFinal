@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,12 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.example.futinfov2.databinding.FragmentCrearTuCartaBinding;
 import com.example.futinfov2.databinding.FragmentSBCBinding;
 import com.example.futinfov2.databinding.ViewholderSbcBinding;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,15 +51,16 @@ public class SBCFragment extends Fragment {
                 */
         firebaseFirestore.collection("SBC").addSnapshotListener((value, error) -> {
             SBCs.clear();
-            value.forEach(document ->{
-                SBCs.add(new SBC(document.getString("nombre"),
-                        document.getString("imgUrl")));
+            value.forEach(document -> {
+                String idSBC = document.getId();
+                SBCs.add(new SBC(idSBC, document.getString("nombre"), document.getString("imgUrl")));
             });
             sbcAdapter.notifyDataSetChanged();
         });
 
 
     }
+
     class SbcViewHolder extends RecyclerView.ViewHolder {
         ViewholderSbcBinding binding;
 
@@ -72,35 +69,26 @@ public class SBCFragment extends Fragment {
             this.binding = binding;
         }
     }
-    class SbcAdapter extends RecyclerView.Adapter<SbcViewHolder>{
+
+    class SbcAdapter extends RecyclerView.Adapter<SbcViewHolder> {
 
         @NonNull
         @Override
         public SbcViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new SbcViewHolder(ViewholderSbcBinding.inflate(getLayoutInflater(),parent,false));
+            return new SbcViewHolder(ViewholderSbcBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull SbcViewHolder holder, int position) {
-        SBC sbc = SBCs.get(position);
-        holder.binding.nombreSBC.setText(sbc.nombre);
-        Glide.with(requireView()).load(sbc.imagen).into(holder.binding.img);
+            SBC sbc = SBCs.get(position);
+            holder.binding.nombreSBC.setText(sbc.nombre);
+            Glide.with(requireView()).load(sbc.imagen).into(holder.binding.img);
 
-            holder.binding.const4.setOnClickListener(new View.OnClickListener(){
+            holder.binding.const4.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-                    tacticasViewModel.setBoton((String) holder.binding.nombreSBC.getText());
-                    /*tacticasViewModel.getBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
-
-                        @Override
-                        public void onChanged(String s) {
-                            System.out.println(s);
-                        }
-                    });
-                    */
-
-                    //guarda bien el valor con el set
+                    tacticasViewModel.setIdSBC(sbc.idSBCD);
                     navController.navigate(R.id.action_SBCFragment_to_infoSBCFragment);
                 }
             });
