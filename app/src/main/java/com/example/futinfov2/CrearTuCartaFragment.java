@@ -35,6 +35,7 @@ public class CrearTuCartaFragment extends Fragment {
         binding.constraintLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 navController.navigate(R.id.action_crearTuCartaFragment_to_crearCarta2Fragment);
             }
         });

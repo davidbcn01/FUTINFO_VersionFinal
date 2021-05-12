@@ -46,7 +46,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView52"
+            android:id="@+id/posicionCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AA"
@@ -56,10 +56,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+            app:layout_constraintTop_toBottomOf="@+id/mediaCrear" />
 
         <TextView
-            android:id="@+id/textView43"
+            android:id="@+id/mediaCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
@@ -72,17 +72,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView14"
+            android:id="@+id/nacionalidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/rectangulo_pais"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.226"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView52" />
+            app:layout_constraintTop_toBottomOf="@+id/posicionCrear" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/teamCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -90,10 +90,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.226"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+            app:layout_constraintTop_toBottomOf="@+id/nacionalidad" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/faceCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
@@ -101,11 +101,11 @@
             android:src="@drawable/rectangulo_cara"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintStart_toEndOf="@+id/nacionalidad"
             app:layout_constraintTop_toTopOf="@+id/carta" />
 
         <TextView
-            android:id="@+id/textView53"
+            android:id="@+id/nameCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -114,10 +114,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+            app:layout_constraintTop_toBottomOf="@+id/faceCrear" />
 
         <TextView
-            android:id="@+id/textView54"
+            android:id="@+id/paceCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -125,10 +125,10 @@
             android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+            app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
         <TextView
-            android:id="@+id/textView55"
+            android:id="@+id/shootCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -136,10 +136,10 @@
             android:textSize="12dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView54" />
+            app:layout_constraintTop_toBottomOf="@+id/paceCrear" />
 
         <TextView
-            android:id="@+id/textView56"
+            android:id="@+id/passCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -147,7 +147,7 @@
             android:textSize="12dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+            app:layout_constraintTop_toBottomOf="@+id/shootCrear" />
 
         <TextView
             android:id="@+id/textView57"
@@ -158,8 +158,8 @@
             android:text="RIT"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView54"
-            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+            app:layout_constraintStart_toEndOf="@+id/paceCrear"
+            app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
         <TextView
             android:id="@+id/textView58"
@@ -169,7 +169,7 @@
             android:text="TIR"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView55"
+            app:layout_constraintStart_toEndOf="@+id/shootCrear"
             app:layout_constraintTop_toBottomOf="@+id/textView57" />
 
         <TextView
@@ -180,11 +180,11 @@
             android:text="PAS"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView56"
+            app:layout_constraintStart_toEndOf="@+id/passCrear"
             app:layout_constraintTop_toBottomOf="@+id/textView58" />
 
         <TextView
-            android:id="@+id/textView60"
+            android:id="@+id/dribblingCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -192,7 +192,7 @@
             android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textView57"
-            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+            app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
         <TextView
             android:id="@+id/textView61"
@@ -203,11 +203,11 @@
             android:text="REG"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView60"
-            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+            app:layout_constraintStart_toEndOf="@+id/dribblingCrear"
+            app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
         <TextView
-            android:id="@+id/textView62"
+            android:id="@+id/defenseCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -215,7 +215,7 @@
             android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textView58"
-            app:layout_constraintTop_toBottomOf="@+id/textView60" />
+            app:layout_constraintTop_toBottomOf="@+id/dribblingCrear" />
 
         <TextView
             android:id="@+id/textView63"
@@ -226,11 +226,11 @@
             android:text="DEF"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView62"
+            app:layout_constraintStart_toEndOf="@+id/defenseCrear"
             app:layout_constraintTop_toBottomOf="@+id/textView61" />
 
         <TextView
-            android:id="@+id/textView64"
+            android:id="@+id/physicalCrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -238,7 +238,7 @@
             android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/textView59"
-            app:layout_constraintTop_toBottomOf="@+id/textView62" />
+            app:layout_constraintTop_toBottomOf="@+id/defenseCrear" />
 
         <TextView
             android:id="@+id/textView65"
@@ -249,7 +249,7 @@
             android:text="FIS"
             android:textColor="@color/black"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/textView64"
+            app:layout_constraintStart_toEndOf="@+id/physicalCrear"
             app:layout_constraintTop_toBottomOf="@+id/textView63" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,7 +15,7 @@
         android:src="@drawable/oro_grande" />
 
     <TextView
-        android:id="@+id/textView52"
+        android:id="@+id/posicionCrear"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_alignStart="@+id/carta"
@@ -31,7 +31,7 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/mediaCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/carta"
@@ -47,7 +47,7 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/nacionalidad"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_alignStart="@+id/carta"
@@ -61,7 +61,7 @@
         android:src="@drawable/rectangulo_pais" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/teamCrear"
         android:layout_width="36dp"
         android:layout_height="37dp"
         android:layout_alignStart="@+id/carta"
@@ -75,7 +75,7 @@
         android:src="@drawable/rectangulo_equipo" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/faceCrear"
         android:layout_width="79dp"
         android:layout_height="96dp"
         android:layout_alignStart="@+id/carta"
@@ -89,7 +89,7 @@
         android:src="@drawable/rectangulo_cara" />
 
     <TextView
-        android:id="@+id/textView53"
+        android:id="@+id/nameCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/carta"
@@ -104,7 +104,7 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/textView54"
+        android:id="@+id/paceCrear"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_alignStart="@+id/carta"
@@ -120,7 +120,7 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/textView55"
+        android:id="@+id/shootCrear"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:layout_alignStart="@+id/carta"
@@ -136,7 +136,7 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/textView56"
+        android:id="@+id/passCrear"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:layout_alignStart="@+id/carta"
@@ -200,7 +200,7 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/textView60"
+        android:id="@+id/dribblingCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/carta"
@@ -234,7 +234,7 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/defenseCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/carta"
@@ -267,7 +267,7 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/textView64"
+        android:id="@+id/physicalCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/carta"
