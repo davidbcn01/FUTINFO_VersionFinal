@@ -62,14 +62,7 @@
         android:id="@+id/crearTuCartaFragment"
         android:name="com.example.futinfov2.CrearTuCartaFragment"
         android:label="fragment_crear_tu_carta"
-        tools:layout="@layout/fragment_crear_tu_carta" >
-        <action
-            android:id="@+id/action_crearTuCartaFragment_to_crearCarta2Fragment"
-            app:destination="@id/crearCarta2Fragment" />
-        <action
-            android:id="@+id/action_crearTuCartaFragment_to_crearCarta3Fragment"
-            app:destination="@id/crearCarta3Fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_crear_tu_carta" />
     <fragment
         android:id="@+id/tacticas1Fragment"
         android:name="com.example.futinfov2.Tacticas1Fragment"
@@ -126,30 +119,6 @@
         <action
             android:id="@+id/action_tacticasEleccionFragment_to_tacticas1Fragment"
             app:destination="@id/tacticas1Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/crearCarta2Fragment"
-        android:name="com.example.futinfov2.CrearCarta2Fragment"
-        android:label="fragment_crear_carta2"
-        tools:layout="@layout/fragment_crear_carta2" >
-        <action
-            android:id="@+id/action_crearCarta2Fragment_to_crearTuCartaFragment"
-            app:destination="@id/crearTuCartaFragment" />
-        <action
-            android:id="@+id/action_crearCarta2Fragment_to_crearCarta3Fragment"
-            app:destination="@id/crearCarta3Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/crearCarta3Fragment"
-        android:name="com.example.futinfov2.CrearCarta3Fragment"
-        android:label="fragment_crear_carta3"
-        tools:layout="@layout/fragment_crear_carta3" >
-        <action
-            android:id="@+id/action_crearCarta3Fragment_to_crearTuCartaFragment"
-            app:destination="@id/crearTuCartaFragment" />
-        <action
-            android:id="@+id/action_crearCarta3Fragment_to_crearCarta2Fragment"
-            app:destination="@id/crearCarta2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"

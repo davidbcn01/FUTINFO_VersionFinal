@@ -83,6 +83,7 @@ public class InfoSBCFragment extends Fragment {
                         // coll usurios, document (idusurio).colle (sbc).docum(idsbc)
                         db.collection("users").document(auth.getUid()).collection("SBC").document(idSBC).set(sbc2);
                     }else{
+                        hecho = false;
                         sbc2 = new SBC(hecho);
                         db.collection("users").document(auth.getUid()).collection("SBC").document(idSBC).set(sbc2);
                     }

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentChangePasswordBinding;
 import com.example.futinfov2.databinding.FragmentCrearTuCartaBinding;
 
@@ -31,18 +32,34 @@ public class CrearTuCartaFragment extends Fragment {
         navController = Navigation.findNavController(view);
 
 
+        binding.constraintLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Glide.with(requireContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/cartas%2FtotwGrande.png?alt=media&token=d251ed9c-e017-4a69-8e5e-3a935b13f211")
+                        .into(binding.carta);
+
+
+            }
+        });
 
         binding.constraintLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Glide.with(requireContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/cartas%2FiconoGrande.png?alt=media&token=443a61ba-64c7-4574-b543-3f306ee2d5f0")
+                        .into(binding.carta);
 
-                navController.navigate(R.id.action_crearTuCartaFragment_to_crearCarta2Fragment);
             }
         });
-        binding.constraintLayout3.setOnClickListener(new View.OnClickListener() {
+        binding.constraintLayout5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_crearTuCartaFragment_to_crearCarta3Fragment);
+                Glide.with(requireContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/cartas%2ForoGrande.png?alt=media&token=4461e0df-7895-401d-8bfd-31dc5745cb4f")
+                        .into(binding.carta);
+
+
             }
         });
 

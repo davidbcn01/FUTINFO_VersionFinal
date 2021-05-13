@@ -147,7 +147,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/shootCrear" />
 
                 <TextView
-                    android:id="@+id/textView57"
+                    android:id="@+id/pace"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -159,7 +159,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
                 <TextView
-                    android:id="@+id/textView58"
+                    android:id="@+id/shoot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -167,10 +167,10 @@
                     android:textColor="@color/black"
                     android:textSize="12dp"
                     app:layout_constraintStart_toEndOf="@+id/shootCrear"
-                    app:layout_constraintTop_toBottomOf="@+id/textView57" />
+                    app:layout_constraintTop_toBottomOf="@+id/pace" />
 
                 <TextView
-                    android:id="@+id/textView59"
+                    android:id="@+id/passing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -178,7 +178,7 @@
                     android:textColor="@color/black"
                     android:textSize="12dp"
                     app:layout_constraintStart_toEndOf="@+id/passCrear"
-                    app:layout_constraintTop_toBottomOf="@+id/textView58" />
+                    app:layout_constraintTop_toBottomOf="@+id/shoot" />
 
                 <TextView
                     android:id="@+id/dribblingCrear"
@@ -188,11 +188,11 @@
                     android:text="00"
                     android:textColor="@color/black"
                     android:textSize="12dp"
-                    app:layout_constraintStart_toEndOf="@+id/textView57"
+                    app:layout_constraintStart_toEndOf="@+id/pace"
                     app:layout_constraintTop_toBottomOf="@+id/nameCrear" />
 
                 <TextView
-                    android:id="@+id/textView61"
+                    android:id="@+id/dribbling"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -211,11 +211,11 @@
                     android:text="00"
                     android:textColor="@color/black"
                     android:textSize="12dp"
-                    app:layout_constraintStart_toEndOf="@+id/textView58"
+                    app:layout_constraintStart_toEndOf="@+id/shoot"
                     app:layout_constraintTop_toBottomOf="@+id/dribblingCrear" />
 
                 <TextView
-                    android:id="@+id/textView63"
+                    android:id="@+id/defending"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -224,7 +224,7 @@
                     android:textColor="@color/black"
                     android:textSize="12dp"
                     app:layout_constraintStart_toEndOf="@+id/defenseCrear"
-                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                    app:layout_constraintTop_toBottomOf="@+id/dribbling" />
 
                 <TextView
                     android:id="@+id/physicalCrear"
@@ -234,11 +234,11 @@
                     android:text="00"
                     android:textColor="@color/black"
                     android:textSize="12dp"
-                    app:layout_constraintStart_toEndOf="@+id/textView59"
+                    app:layout_constraintStart_toEndOf="@+id/passing"
                     app:layout_constraintTop_toBottomOf="@+id/defenseCrear" />
 
                 <TextView
-                    android:id="@+id/textView65"
+                    android:id="@+id/physicality"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -247,7 +247,7 @@
                     android:textColor="@color/black"
                     android:textSize="12dp"
                     app:layout_constraintStart_toEndOf="@+id/physicalCrear"
-                    app:layout_constraintTop_toBottomOf="@+id/textView63" />
+                    app:layout_constraintTop_toBottomOf="@+id/defending" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
