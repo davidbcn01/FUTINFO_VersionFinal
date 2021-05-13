@@ -47,9 +47,6 @@
             android:id="@+id/action_inicioFragment_to_tacticasOfensivasFragment"
             app:destination="@id/tacticasOfensivasFragment" />
         <action
-            android:id="@+id/action_inicioFragment_to_objetivosDiariosFragment"
-            app:destination="@id/objetivosDiariosFragment" />
-        <action
             android:id="@+id/action_inicioFragment_to_objetivosHitosFragment"
             app:destination="@id/objetivosHitosFragment" />
     </fragment>
@@ -81,17 +78,9 @@
         android:label="fragment_objetivos1"
         tools:layout="@layout/fragment_objetivos1" >
         <action
-            android:id="@+id/action_objetivos1Fragment_to_objetivosDiariosFragment"
-            app:destination="@id/objetivosDiariosFragment" />
-        <action
             android:id="@+id/action_objetivos1Fragment_to_objetivosHitosFragment"
             app:destination="@id/objetivosHitosFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/objetivosDiariosFragment"
-        android:name="com.example.futinfov2.ObjetivosDiariosFragment"
-        android:label="fragment_objetivos_diarios"
-        tools:layout="@layout/fragment_objetivos_diarios" />
     <fragment
         android:id="@+id/objetivosHitosFragment"
         android:name="com.example.futinfov2.ObjetivosHitosFragment"

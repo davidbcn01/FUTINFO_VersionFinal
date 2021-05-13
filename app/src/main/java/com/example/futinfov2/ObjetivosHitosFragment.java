@@ -126,8 +126,18 @@ public class ObjetivosHitosFragment extends Fragment {
             holder.binding.reward.setText(objetivo.getRecompensa());
             holder.binding.objetivoNum.setText(objetivo.getObjetivo());
 
+           /* int progreso = Integer.parseInt(String.valueOf(holder.binding.editText.getText()));
 
+           binding.button16.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Objetivo obj = new Objetivo(objetivo.getTitulo(),progreso);
+                   db.collection("users").document(mAuth.getUid()).collection("objetivos").document(objetivo.idSBCD).set(obj);
 
+               }
+           });
+
+*/
 
 
         }

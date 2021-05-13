@@ -8,6 +8,12 @@ public class Objetivo {
     private String recompensa;
     private String objetivo;
     public String idSBCD;
+    public int progreso;
+
+    public Objetivo(String titulo,int progreso) {
+        this.titulo = titulo;
+        this.progreso = progreso;
+    }
 
     public Objetivo(String titulo, String descripcion, String recompensa, String objetivo) {
         this.titulo = titulo;
