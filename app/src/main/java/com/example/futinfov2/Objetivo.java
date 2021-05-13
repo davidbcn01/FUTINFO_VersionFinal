@@ -8,9 +8,9 @@ public class Objetivo {
     private String recompensa;
     private String objetivo;
     public String idSBCD;
-    public int progreso;
+    public String progreso;
 
-    public Objetivo(String titulo,int progreso) {
+    public Objetivo(String titulo,String progreso) {
         this.titulo = titulo;
         this.progreso = progreso;
     }
@@ -29,6 +29,8 @@ public class Objetivo {
         this.recompensa = document.getString("recompensa");
         this.objetivo = document.getString("objetivo");
     }
+
+
 
     public String getTitulo() {
         return titulo;
