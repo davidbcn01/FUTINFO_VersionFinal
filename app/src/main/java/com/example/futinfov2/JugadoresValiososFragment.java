@@ -28,8 +28,8 @@ public class JugadoresValiososFragment extends Fragment {
 
 
     private FragmentJugadoresValiososBinding binding;
-    private JugadoresViewModel jugadoresViewModel;
-    private JugadoresViewModel2 jugadoresViewModel2;
+    /*private JugadoresViewModel jugadoresViewModel;
+    private JugadoresViewModel2 jugadoresViewModel2;*/
     private Dialog dialog;
 
     @Override
@@ -44,7 +44,7 @@ public class JugadoresValiososFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-         jugadoresViewModel = new ViewModelProvider(this).get(JugadoresViewModel.class);
+         /*jugadoresViewModel = new ViewModelProvider(this).get(JugadoresViewModel.class);
 
         jugadoresViewModel2 = new ViewModelProvider(this).get(JugadoresViewModel2.class);
 
@@ -177,6 +177,8 @@ public class JugadoresValiososFragment extends Fragment {
             this.jugadores = jugadores;
             notifyDataSetChanged();
         }
+    }
+    */
     }
 }
 
