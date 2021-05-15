@@ -32,6 +32,7 @@ public class FirebaseJugadores {
        Value dribbling;
        Value defense;
        Value physic;
+       Value cardBig;
     }
 
     class Value {

@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_inicioFragment_to_objetivosHitosFragment"
             app:destination="@id/objetivosHitosFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_infoJugadorFragment"
+            app:destination="@id/infoJugadorFragment" />
     </fragment>
     <fragment
         android:id="@+id/jugadoresValiososFragment"
@@ -149,4 +152,9 @@
         android:name="com.example.futinfov2.rankingsFragment"
         android:label="fragment_rankings"
         tools:layout="@layout/fragment_rankings" />
+    <fragment
+        android:id="@+id/infoJugadorFragment"
+        android:name="com.example.futinfov2.InfoJugadorFragment"
+        android:label="fragment_info_jugador"
+        tools:layout="@layout/fragment_info_jugador" />
 </navigation>

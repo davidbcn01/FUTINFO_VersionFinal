@@ -1,5 +1,6 @@
 package com.example.futinfov2;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +35,8 @@ public class InicioFragment extends Fragment {
     private NavController navController;
     private FirebaseFirestore db;
     private TacticasViewModel tacticasViewModel;
+
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -159,6 +163,7 @@ public class InicioFragment extends Fragment {
 
                 @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
                     if (s.toString().equals(jugador.fields.name.stringValue)){
+                        binding.recyclerView3.setVisibility(View.VISIBLE);
                         holder.binding.nombre.setText(jugador.fields.name.stringValue);
                         holder.binding.media.setText(jugador.fields.rating.stringValue);
                         holder.binding.posicion.setText(jugador.fields.position.stringValue);
@@ -166,6 +171,15 @@ public class InicioFragment extends Fragment {
                         Glide.with(requireActivity()).load(jugador.fields.team.stringValue).into(holder.binding.equipo);
                         Glide.with(requireActivity()).load(jugador.fields.country.stringValue).into(holder.binding.pais);
                         Glide.with(requireActivity()).load(jugador.fields.face.stringValue).into(holder.binding.cara);
+                        holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                tacticasViewModel.setJugadorMutableLiveData(jugador);
+                                navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
+                            }
+                        });
+                    }else{
+                        binding.recyclerView3.setVisibility(View.INVISIBLE);
                     }
                 }
 
