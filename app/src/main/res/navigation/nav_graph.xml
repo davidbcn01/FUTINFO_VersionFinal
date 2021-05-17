@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_inicioFragment_to_infoJugadorFragment"
             app:destination="@id/infoJugadorFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_futchamps1Fragment"
+            app:destination="@id/futchamps1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/jugadoresValiososFragment"
@@ -157,4 +160,27 @@
         android:name="com.example.futinfov2.InfoJugadorFragment"
         android:label="fragment_info_jugador"
         tools:layout="@layout/fragment_info_jugador" />
+    <fragment
+        android:id="@+id/futchamps1Fragment"
+        android:name="com.example.futinfov2.futchamps1Fragment"
+        android:label="fragment_futchamps1"
+        tools:layout="@layout/fragment_futchamps1" >
+        <action
+            android:id="@+id/action_futchamps1Fragment_to_futChamp2Fragment"
+            app:destination="@id/futChamp2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/futChamp2Fragment"
+        android:name="com.example.futinfov2.FutChamp2Fragment"
+        android:label="fragment_fut_champ2"
+        tools:layout="@layout/fragment_fut_champ2" >
+        <action
+            android:id="@+id/action_futChamp2Fragment_to_futChamps3Fragment"
+            app:destination="@id/futChamps3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/futChamps3Fragment"
+        android:name="com.example.futinfov2.FutChamps3Fragment"
+        android:label="fragment_fut_champs3"
+        tools:layout="@layout/fragment_fut_champs3" />
 </navigation>

@@ -7,9 +7,9 @@
             />
 
         <item
-            android:id="@+id/jugadoresValiososFragment"
+            android:id="@+id/futchamps1Fragment"
             android:icon="@drawable/icono"
-            android:title="Jugadores" />
+            android:title="FutChamps" />
 
         <item
             android:id="@+id/tacticas1Fragment"
