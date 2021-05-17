@@ -42,6 +42,7 @@ FragmentInfoJugadorBinding binding;
                 binding.dribblingCrear.setText(jugador.fields.dribbling.stringValue);
                 binding.physicalCrear.setText(jugador.fields.physic.stringValue);
                 binding.nameCrear.setText(jugador.fields.name.stringValue);
+                binding.precio.setText(jugador.fields.price.stringValue);
 
                 Glide.with(requireContext()).load(jugador.fields.face.stringValue).into(binding.faceCrear);
                 Glide.with(requireContext()).load(jugador.fields.cardBig.stringValue).into(binding.cartaJ);

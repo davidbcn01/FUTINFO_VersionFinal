@@ -17,6 +17,7 @@
             android:background="@drawable/cyan_dark_blue_mini_medium"
             android:text="FutChamp 1"
             android:textColor="#FFFFFF"
+            android:layout_marginLeft="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
