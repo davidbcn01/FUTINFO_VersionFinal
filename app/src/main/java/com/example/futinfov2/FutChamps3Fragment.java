@@ -106,7 +106,7 @@ public class FutChamps3Fragment extends Fragment {
                         });
 
 
-
+                        navController.navigate(R.id.action_futChamps3Fragment_to_futChamp2Fragment);
                     }
                 });
     }

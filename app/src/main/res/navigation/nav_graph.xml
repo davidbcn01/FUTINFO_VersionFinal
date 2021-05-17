@@ -182,5 +182,9 @@
         android:id="@+id/futChamps3Fragment"
         android:name="com.example.futinfov2.FutChamps3Fragment"
         android:label="fragment_fut_champs3"
-        tools:layout="@layout/fragment_fut_champs3" />
+        tools:layout="@layout/fragment_fut_champs3" >
+        <action
+            android:id="@+id/action_futChamps3Fragment_to_futChamp2Fragment"
+            app:destination="@id/futChamp2Fragment" />
+    </fragment>
 </navigation>
