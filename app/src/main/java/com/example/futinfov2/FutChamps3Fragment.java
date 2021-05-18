@@ -63,6 +63,7 @@ public class FutChamps3Fragment extends Fragment {
                 binding.partido.setText(partido);
             }
         });
+
         tacticasViewModel.getNombreMutableLiveData().observe(getViewLifecycleOwner(), new Observer<String>() {
 
             @Override

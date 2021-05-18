@@ -168,6 +168,9 @@
         <action
             android:id="@+id/action_futchamps1Fragment_to_futChamp2Fragment"
             app:destination="@id/futChamp2Fragment" />
+        <action
+            android:id="@+id/action_futchamps1Fragment_to_verFutChampsFragment"
+            app:destination="@id/verFutChampsFragment" />
     </fragment>
     <fragment
         android:id="@+id/futChamp2Fragment"
@@ -187,4 +190,9 @@
             android:id="@+id/action_futChamps3Fragment_to_futChamp2Fragment"
             app:destination="@id/futChamp2Fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/verFutChampsFragment"
+        android:name="com.example.futinfov2.VerFutChampsFragment"
+        android:label="fragment_ver_fut_champs"
+        tools:layout="@layout/fragment_ver_fut_champs" />
 </navigation>

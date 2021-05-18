@@ -101,7 +101,7 @@ public class futchamps1Fragment extends Fragment {
                 public void onClick(View v) {
                     tacticasViewModel.setIdSBC(futChamps.id);
 
-                   // navController.navigate(R.id.action_futchamps1Fragment_to_futChamp2Fragment);
+                    navController.navigate(R.id.action_futchamps1Fragment_to_verFutChampsFragment);
                 }
             });
 

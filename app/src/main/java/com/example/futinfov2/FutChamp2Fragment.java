@@ -62,7 +62,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button2.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button3)
@@ -73,7 +73,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button3.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button4)
@@ -84,7 +84,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button4.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button4)
@@ -95,7 +95,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button4.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button5)
@@ -106,7 +106,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button5.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button6)
@@ -117,7 +117,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button6.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button7)
@@ -128,7 +128,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button7.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button8)
@@ -139,7 +139,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button13.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button8)
@@ -150,7 +150,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button13.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button9)
@@ -161,7 +161,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button9.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button10)
@@ -172,7 +172,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button10.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button11)
@@ -183,7 +183,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button11.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button12)
@@ -194,7 +194,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button12.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button13)
@@ -205,7 +205,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button13.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button14)
@@ -216,7 +216,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button14.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button15)
@@ -227,7 +227,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button15.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button16)
@@ -238,7 +238,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button16.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button17)
@@ -249,7 +249,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button17.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo(binding.button18)
@@ -260,7 +260,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button18.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button19)
@@ -271,7 +271,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button19.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button20)
@@ -282,7 +282,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button20.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button21)
@@ -293,7 +293,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button21.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button22)
@@ -304,7 +304,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button22.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button23)
@@ -315,7 +315,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button23.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button24)
@@ -326,7 +326,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button24.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button25)
@@ -337,7 +337,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button25.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button26)
@@ -348,7 +348,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button26.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button27)
@@ -359,7 +359,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button27.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button28)
@@ -370,7 +370,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button28.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button29)
@@ -381,7 +381,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button29.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.button30)
@@ -392,7 +392,7 @@ public class FutChamp2Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         tacticasViewModel.setPartidoMutableLiveData((String) binding.button30.getText());
-                        navController.navigate(R.id.action_tacticasFormacionFragment_to_tacticasEleccionFragment);
+                        navController.navigate(R.id.action_futChamp2Fragment_to_futChamps3Fragment);
                     }
                 });
         PushDownAnim.setPushDownAnimTo( binding.guardar)

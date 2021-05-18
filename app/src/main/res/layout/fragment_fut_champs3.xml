@@ -94,7 +94,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/log_in_bg"
             android:gravity="center"
-            android:hint="Jugador: goles,..."
+            android:hint="Jugador(goles),..."
             android:textColorHint="@color/Gris"
             android:fontFamily="@font/montserratmedium"
             android:textColor="@color/black"

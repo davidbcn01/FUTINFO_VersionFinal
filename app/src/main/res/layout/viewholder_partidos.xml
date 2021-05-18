@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/cyan_dark_blue_big">
+
+
+    <TextView
+        android:id="@+id/partido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserratmedium"
+        android:text="Partido X"
+
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="27dp"
+        android:text="Resultado: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/partido" />
+
+    <TextView
+        android:id="@+id/resultadoP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="27dp"
+
+        android:text="4-1"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+
+        app:layout_constraintLeft_toRightOf="@id/result"
+        app:layout_constraintTop_toBottomOf="@+id/partido" />
+
+    <TextView
+        android:id="@+id/pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:text="Posesión: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultadoP" />
+
+    <TextView
+        android:id="@+id/posesionP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="50-50"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/pos"
+
+        app:layout_constraintTop_toBottomOf="@+id/resultadoP" />
+
+    <TextView
+        android:id="@+id/gol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:text="Goles: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/posesionP" />
+
+    <TextView
+        android:id="@+id/golesP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Messi(1), Ronaldo(2)"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/gol"
+
+        app:layout_constraintTop_toBottomOf="@+id/posesionP" />
+
+    <TextView
+        android:id="@+id/asist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:text="Asistencias: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/golesP" />
+
+    <TextView
+        android:id="@+id/asistenciasP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Messi(1), Ronaldo(2)"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/asist"
+
+        app:layout_constraintTop_toBottomOf="@+id/golesP" />
+    <TextView
+        android:id="@+id/tir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:text="Tiros a puerta: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asistenciasP" />
+
+    <TextView
+        android:id="@+id/tirosP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="4-7"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/tir"
+
+        app:layout_constraintTop_toBottomOf="@+id/asistenciasP" />
+
+    <TextView
+        android:id="@+id/parad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:text="Paradas de los porteros: "
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tirosP" />
+
+    <TextView
+        android:id="@+id/paradasP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="4-7"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@id/parad"
+
+        app:layout_constraintTop_toBottomOf="@+id/tirosP" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parad" />
+</androidx.constraintlayout.widget.ConstraintLayout>
