@@ -33,6 +33,10 @@ public class Objetivo {
         this.progreso = progreso;
     }
 
+    public Objetivo(String progreso) {
+        this.progreso = progreso;
+    }
+
     public String getProgreso() {
         return progreso;
     }
