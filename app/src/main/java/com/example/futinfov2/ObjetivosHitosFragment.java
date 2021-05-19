@@ -73,14 +73,14 @@ public class ObjetivosHitosFragment extends Fragment {
                         objetivosAdapter.notifyDataSetChanged();
                     });
 
-                    /*db.collection("users").document(mAuth.getUid()).collection(coleccion).addSnapshotListener((value, error) -> {
+                    db.collection("users").document(mAuth.getUid()).collection(coleccion).addSnapshotListener((value, error) -> {
                         objetivosActu.clear();
                         value.forEach(document -> {
                             objetivosActu.add(new Objetivo(document));
                         });
                         objetivosAdapter.notifyDataSetChanged();
                     });
-                    */
+
 
 
                     /*binding.button16.setOnClickListener(new View.OnClickListener(){
@@ -160,8 +160,12 @@ public class ObjetivosHitosFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull ObjViewHolder holder, int position) {
             System.out.println("ABCD onBindView");
-            for (int i = 0;i<objetivos.size();i++){
-                objetivosActu.add(objetivos.get(i));
+            if (objetivosActu.size()==0) {
+                for (int i = 0; i < objetivos.size(); i++) {
+                    objetivosActu.add(objetivos.get(i));
+                }
+            }else{
+
             }
             Objetivo objetivo = objetivosActu.get(position);
 
