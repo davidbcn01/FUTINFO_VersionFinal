@@ -36,8 +36,9 @@ public class ObjetivosHitosFragment extends Fragment {
     private FragmentObjetivosHitosBinding binding;
     private FirebaseAuth mAuth;
     private List<Objetivo> objetivos = new ArrayList<>();
+    private List<Objetivo> objetivosActu = new ArrayList<>();
     private HashMap<String, String> conseguidos = new HashMap<>();   // <idSBC, valor>
-
+    String coleccion;
     // 7db345df 56
     // Q8tdfsf  10
     // 3ry   98
@@ -57,10 +58,11 @@ public class ObjetivosHitosFragment extends Fragment {
         ObjetivosAdapter objetivosAdapter = new ObjetivosAdapter();
 
         binding.recyclerView.setAdapter(objetivosAdapter);
-
+        System.out.println("onViewCreated");
         tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), idSBC -> {
             switch (idSBC) {
                 case "Hitos":
+                    coleccion =idSBC;
                     binding.encabezado.setText(idSBC.toUpperCase());
 
                     db.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
@@ -71,15 +73,15 @@ public class ObjetivosHitosFragment extends Fragment {
                         objetivosAdapter.notifyDataSetChanged();
                     });
 
-                    db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
-                        conseguidos.clear();
-                        value.forEach(document->{
-                            conseguidos.put(document.getId(), document.getString("progreso"));
+                    /*db.collection("users").document(mAuth.getUid()).collection(coleccion).addSnapshotListener((value, error) -> {
+                        objetivosActu.clear();
+                        value.forEach(document -> {
+                            objetivosActu.add(new Objetivo(document));
                         });
-                        // meter todos los logros en el hashmap
-
                         objetivosAdapter.notifyDataSetChanged();
                     });
+                    */
+
 
                     /*binding.button16.setOnClickListener(new View.OnClickListener(){
 
@@ -92,6 +94,7 @@ public class ObjetivosHitosFragment extends Fragment {
                     */
                     break;
                 case "Jugador de liga":
+                    coleccion =idSBC;
                     binding.encabezado.setText(idSBC.toUpperCase());
                     db.collection("objetivos").document("kz5BAjAL9T9zU0gHgCiF").collection("liga").addSnapshotListener((value, error) -> {
                         objetivos.clear();
@@ -100,7 +103,7 @@ public class ObjetivosHitosFragment extends Fragment {
                         });
                         objetivosAdapter.notifyDataSetChanged();
                     });
-                    db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
+                   /* db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
                         conseguidos.clear();
                         value.forEach(document->{
                             conseguidos.put(document.getId(),document.getString("progreso"));
@@ -109,10 +112,11 @@ public class ObjetivosHitosFragment extends Fragment {
 
                         objetivosAdapter.notifyDataSetChanged();
                     });
-
+*/
 
                     break;
                 case "Objetivos diarios":
+                    coleccion =idSBC;
                     binding.encabezado.setText(idSBC.toUpperCase());
                     db.collection("objetivos").document("PYOIkdC5n5m1QYob4EgD").collection("objetivosDiarios").addSnapshotListener((value, error) -> {
                         objetivos.clear();
@@ -121,7 +125,7 @@ public class ObjetivosHitosFragment extends Fragment {
                         });
                         objetivosAdapter.notifyDataSetChanged();
                     });
-                    db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
+                   /* db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
                         conseguidos.clear();
                         value.forEach(document->{
                             conseguidos.put(document.getId(),document.getString("progreso"));
@@ -130,7 +134,7 @@ public class ObjetivosHitosFragment extends Fragment {
 
                         objetivosAdapter.notifyDataSetChanged();
                     });
-
+*/
                     break;
             }
         });
@@ -156,23 +160,35 @@ public class ObjetivosHitosFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull ObjViewHolder holder, int position) {
             System.out.println("ABCD onBindView");
-            Objetivo objetivo = objetivos.get(position);
+            for (int i = 0;i<objetivos.size();i++){
+                objetivosActu.add(objetivos.get(i));
+            }
+            Objetivo objetivo = objetivosActu.get(position);
 
             holder.binding.titulo.setText(objetivo.getTitulo());
             holder.binding.descrip.setText(objetivo.getDescripcion());
             holder.binding.reward.setText(objetivo.getRecompensa());
             holder.binding.objetivoNum.setText(objetivo.getObjetivo());
+            holder.binding.editText.setText(objetivo.getProgreso());
+/*
+if(objetivosActu.size()>0) {
+    Objetivo objetivo2 = objetivosActu.get(position);
+    holder.binding.titulo.setText(objetivo2.getTitulo());
+    holder.binding.descrip.setText(objetivo2.getDescripcion());
+    holder.binding.reward.setText(objetivo2.getRecompensa());
+    holder.binding.objetivoNum.setText(objetivo2.getObjetivo());
+    holder.binding.editText.setText(objetivo2.getProgreso());
+}
+*/
 
-            if(conseguidos.containsKey(objetivo.idSBCD)){
+            /*if(conseguidos.containsKey(objetivo.idSBCD)){
                 holder.binding.editText.setText(conseguidos.get(objetivo.idSBCD));
             }else{
                 holder.binding.editText.setText("0");
             }
             // si el objetivo no esta en el hasmap es que 0
             //
-
-
-
+*/
             holder.binding.editText.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -184,9 +200,9 @@ public class ObjetivosHitosFragment extends Fragment {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    Log.e("ABCD tetchanged", "" + s);
-                    Objetivo obj = new Objetivo(objetivo.getTitulo(), s.toString());
-                    db.collection("users").document(mAuth.getUid()).collection("objetivos").document(objetivo.idSBCD).set(obj);
+                    Log.e("ABCD textchanged", "" + s);
+                    Objetivo obj = new Objetivo(objetivo.getTitulo(), objetivo.getDescripcion(),objetivo.getRecompensa(),objetivo.getObjetivo(),s.toString());
+                    db.collection("users").document(mAuth.getUid()).collection(coleccion).document(objetivo.idSBCD).set(obj);
                 }
 
             });

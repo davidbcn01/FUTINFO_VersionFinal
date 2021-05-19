@@ -22,12 +22,32 @@ public class Objetivo {
         this.objetivo = objetivo;
     }
 
+    public Objetivo() {
+    }
+
+    public Objetivo(String titulo, String descripcion, String recompensa, String objetivo, String progreso) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.recompensa = recompensa;
+        this.objetivo = objetivo;
+        this.progreso = progreso;
+    }
+
+    public String getProgreso() {
+        return progreso;
+    }
+
+    public void setProgreso(String progreso) {
+        this.progreso = progreso;
+    }
+
     public Objetivo(QueryDocumentSnapshot document) {
         this.idSBCD = document.getId();
         this.titulo = document.getString("titulo");
         this.descripcion = document.getString("descripcion");
         this.recompensa = document.getString("recompensa");
         this.objetivo = document.getString("objetivo");
+        this.progreso = document.getString("progreso");
     }
 
 
