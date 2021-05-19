@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "144859217998",
+    "project_id": "futinfo-1b129",
+    "storage_bucket": "futinfo-1b129.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144859217998:android:9530da46913e865f3d031f",
+        "android_client_info": {
+          "package_name": "com.example.futinfov2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144859217998-pin5mn00c1dtem57ddvhl6t6t75e63ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo1eSl-z16lX_hPpqnLPwy30kHpTUCzQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144859217998-pin5mn00c1dtem57ddvhl6t6t75e63ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
