@@ -1,5 +1,7 @@
 package com.example.futinfov2;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +12,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -22,6 +25,8 @@ import com.example.futinfov2.databinding.ViewholderObjetivosNumBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,13 +37,14 @@ public class ObjetivosHitosFragment extends Fragment {
     private FirebaseFirestore db;
     private FragmentObjetivosHitosBinding binding;
     private FirebaseAuth mAuth;
+    String id;
+    String objColection;
     private List<Objetivo> objetivos = new ArrayList<>();
-    private List<Objetivo> progreso = new ArrayList<>();
     private HashMap<String, String> conseguidos = new HashMap<>();   // <idSBC, valor>
+
     String coleccion;
-    // 7db345df 56
-    // Q8tdfsf  10
-    // 3ry   98fghju
+    private ObjetivosAdapter objetivosAdapter;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,102 +58,89 @@ public class ObjetivosHitosFragment extends Fragment {
         navController = Navigation.findNavController(view);
         mAuth = FirebaseAuth.getInstance();
         TacticasViewModel tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
-        ObjetivosAdapter objetivosAdapter = new ObjetivosAdapter();
 
+        objetivosAdapter = new ObjetivosAdapter();
         binding.recyclerView.setAdapter(objetivosAdapter);
-        System.out.println("onViewCreated");
+
         tacticasViewModel.getIdSBC().observe(getViewLifecycleOwner(), idSBC -> {
             switch (idSBC) {
                 case "Hitos":
+                    id = "l2hk6bCEPEhoLwIfBqxf";
+                    objColection = "hitos";
                     coleccion = idSBC;
                     binding.encabezado.setText(idSBC.toUpperCase());
-
-                    db.collection("objetivos").document("l2hk6bCEPEhoLwIfBqxf").collection("hitos").addSnapshotListener((value, error) -> {
-                        objetivos.clear();
-                        value.forEach(document -> {
-                            objetivos.add(new Objetivo(document));
-                        });
-
-
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-
-                    db.collection("users").document(mAuth.getUid()).collection(coleccion).addSnapshotListener((value, error) -> {
-                        conseguidos.clear();
-                        value.forEach(document -> {
-                            conseguidos.put(document.getId(), document.getString("progreso"));
-                        });
-                        conseguidos.entrySet().forEach(e -> {
-                            Log.e("ABCD", "entradas : " + e.getKey() + " -> " + e.getValue());
-                        });
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-
-                    binding.button16.setOnClickListener(v -> {
-                        Log.e("ABCD", "boton click");
-                        conseguidos.entrySet().forEach(e -> {
-                            Log.e("ABCD", "entradas : " + e.getKey() + " -> " + e.getValue());
-                            db.collection("users").document(mAuth.getUid()).collection(coleccion).document(e.getKey()).set(new Objetivo(e.getValue()));
-
-                        });
-                        navController.navigate(R.id.action_objetivosHitosFragment_to_objetivos1Fragment);
-
-                    });
-
-                    /*binding.button16.setOnClickListener(new View.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-                            //te has quedado por aqui bobo
-                        db.collection("users").document(mAuth.getUid()).collection("ObjetivosHitos");
-                        }
-                    });
-                    */
                     break;
                 case "Jugador de liga":
                     coleccion = idSBC;
+                    id = "kz5BAjAL9T9zU0gHgCiF";
+                    objColection = "liga";
                     binding.encabezado.setText(idSBC.toUpperCase());
-                    db.collection("objetivos").document("kz5BAjAL9T9zU0gHgCiF").collection("liga").addSnapshotListener((value, error) -> {
-                        objetivos.clear();
-                        value.forEach(document -> {
-                            objetivos.add(new Objetivo(document));
-                        });
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-                   /* db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
-                        conseguidos.clear();
-                        value.forEach(document->{
-                            conseguidos.put(document.getId(),document.getString("progreso"));
-                        });
-                        // meter todos los logros en el hashmap
-
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-*/
-
                     break;
                 case "Objetivos diarios":
                     coleccion = idSBC;
+                    id = "PYOIkdC5n5m1QYob4EgD";
+                    objColection = "objetivosDiarios";
                     binding.encabezado.setText(idSBC.toUpperCase());
-                    db.collection("objetivos").document("PYOIkdC5n5m1QYob4EgD").collection("objetivosDiarios").addSnapshotListener((value, error) -> {
-                        objetivos.clear();
-                        value.forEach(document -> {
-                            objetivos.add(new Objetivo(document));
-                        });
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-                   /* db.collection("users").document(mAuth.getUid()).collection("objetivos").addSnapshotListener((value, error) -> {
-                        conseguidos.clear();
-                        value.forEach(document->{
-                            conseguidos.put(document.getId(),document.getString("progreso"));
-                        });
-                        // meter todos los logros en el hashmap
-
-                        objetivosAdapter.notifyDataSetChanged();
-                    });
-*/
                     break;
             }
+            getObjetivos(id, objColection);
+            showObjetivos(coleccion);
+            binding.button16.setOnClickListener(v -> {
+                setObjetivos(coleccion);
+                navController.navigate(R.id.action_objetivosHitosFragment_to_objetivos1Fragment);
+            });
+        });
+
+
+    }
+/*
+    public void captureView(int viewId,String filename){
+        //Find the view we are after
+              //Create a Bitmap with the same dimensions
+        Bitmap image = Bitmap.createBitmap(binding.recyclerView.getWidth(),
+                binding.recyclerView.getHeight(),
+                Bitmap.Config.RGB_565);
+        //Draw the view inside the Bitmap
+        binding.recyclerView.draw(new Canvas(image));
+
+        //Store to sdcard
+        try {
+            String path = Environment.getExternalStorageDirectory().toString();  // qutar esto
+            File myFile = new File(path,filename);   // en lugar de new filoe, tienes usar createTempFile o algo así
+            FileOutputStream out = new FileOutputStream(myFile);
+
+            image.compress(Bitmap.CompressFormat.PNG, 90, out); //Output
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+*/
+    private void setObjetivos(String colection) {
+        conseguidos.entrySet().forEach(e -> {
+            db.collection("users").document(mAuth.getUid()).collection(colection).document(e.getKey()).set(new Objetivo(e.getValue()));
+        });
+    }
+
+    private void showObjetivos(String coleccion) {
+        db.collection("users").document(mAuth.getUid()).collection(coleccion).addSnapshotListener((value, error) -> {
+            conseguidos.clear();
+            value.forEach(document -> {
+                conseguidos.put(document.getId(), document.getString("progreso"));
+            });
+            conseguidos.entrySet().forEach(e -> {
+            });
+            objetivosAdapter.notifyDataSetChanged();
+        });
+    }
+
+    private void getObjetivos(String id, String coleccion) {
+        db.collection("objetivos").document(id).collection(coleccion).addSnapshotListener((value, error) -> {
+            objetivos.clear();
+            value.forEach(document -> {
+                objetivos.add(new Objetivo(document));
+            });
+
+            objetivosAdapter.notifyDataSetChanged();
         });
     }
 
@@ -170,67 +163,45 @@ public class ObjetivosHitosFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull ObjViewHolder holder, int position) {
-            System.out.println("ABCD onBindView");
             Objetivo objetivo = objetivos.get(position);
 
             holder.binding.titulo.setText(objetivo.getTitulo());
             holder.binding.descrip.setText(objetivo.getDescripcion());
             holder.binding.reward.setText(objetivo.getRecompensa());
             holder.binding.objetivoNum.setText(objetivo.getObjetivo());
-            holder.binding.editText.setText(objetivo.getProgreso());
 
-//            hasmap.get(objetivo.idSBCD)
-
+            holder.binding.editText.setTag("cualquiercosa");
 
             if (conseguidos.containsKey(objetivo.idSBCD)) {
-                System.out.println("ABCD " + "containskey");
-                holder.binding.editText.setText(conseguidos.get(objetivo.idSBCD));
-                // lo marco
+                if ("".equals(conseguidos.get(objetivo.idSBCD))) {
+                    holder.binding.editText.setText("0");
+                } else {
+                    holder.binding.editText.setText(conseguidos.get(objetivo.idSBCD));
+                }
             } else {
-                System.out.println("ABCD " + "NOT  containskey");
-                holder.binding.editText.setText(objetivo.progreso);
+                holder.binding.editText.setText("0");
             }
-            // si el objetivo no esta en el hasmap es que 0
-            //
 
-   /* Log.e("ABCD textchanged", "" + s);
-                    if(!s.equals("0")){
-                        conseguidos.put(objetivo.idSBCD, s.toString());
-                    }
-                    */
-            holder.binding.editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            holder.binding.editText.addTextChangedListener(new TextWatcher() {
                 @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    // si estaba marcado no guardo en el hashmap per lo dedsmarco
-                    if (!hasFocus){
-                        conseguidos.put(objetivo.idSBCD, holder.binding.editText.getText().toString());
-                    }
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
                 }
 
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(holder.binding.editText.getTag() == null){
+                        conseguidos.put(objetivo.idSBCD, s.toString());
+                    }
+                    holder.binding.editText.setTag(null);
+                }
 
+                @Override
+                public void afterTextChanged(Editable s) {
+                    holder.binding.editText.clearFocus();
+                }
             });
 
-
-
-                    //Objetivo obj = new Objetivo(objetivo.getTitulo(), objetivo.getDescripcion(),objetivo.getRecompensa(),objetivo.getObjetivo(),s.toString());
-                    //db.collection("users").document(mAuth.getUid()).collection(coleccion).document(objetivo.idSBCD).set(obj);
-
-
-
-
-           /* int progreso = Integer.parseInt(String.valueOf(holder.binding.editText.getText()));
-
-           binding.button16.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   Objetivo obj = new Objetivo(objetivo.getTitulo(),progreso);
-                   db.collection("users").document(mAuth.getUid()).collection("objetivos").document(objetivo.idSBCD).set(obj);
-
-               }
-           });
-
-*/
 
 
         }
