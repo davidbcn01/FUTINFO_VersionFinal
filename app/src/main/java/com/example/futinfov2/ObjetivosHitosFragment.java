@@ -38,7 +38,7 @@ public class ObjetivosHitosFragment extends Fragment {
     String coleccion;
     // 7db345df 56
     // Q8tdfsf  10
-    // 3ry   98
+    // 3ry   98fghju
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
