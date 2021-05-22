@@ -1,13 +1,19 @@
 package com.example.futinfov2;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +21,15 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentChangePasswordBinding;
 import com.example.futinfov2.databinding.FragmentCrearTuCartaBinding;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static androidx.core.content.ContextCompat.checkSelfPermission;
+import static androidx.core.content.PermissionChecker.PERMISSION_GRANTED;
 
 
 public class CrearTuCartaFragment extends Fragment {
@@ -63,5 +78,75 @@ public class CrearTuCartaFragment extends Fragment {
             }
         });
 
+        binding.descargar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            captureView();
+            }
+        });
+binding.nation.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        abrirGaleria();
     }
+});
+    }
+
+    public void captureView(){
+        boolean saved;
+        OutputStream fos;
+        Bitmap image = Bitmap.createBitmap(binding.constraintLayout4.getWidth(),
+                binding.constraintLayout4.getHeight(),
+                Bitmap.Config.RGB_565);
+        //Draw the view inside the Bitmap
+        binding.constraintLayout4.draw(new Canvas(image));
+
+        //Store to sdcard
+        try {
+            String dirImagen = Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DOWNLOADS).toString();
+            File file = new File(dirImagen);
+            if(!file.exists()){
+                file.mkdir();
+            }
+            File imagen = new File(dirImagen,"Imagen.png");
+            fos = new FileOutputStream(imagen);
+             image.compress(Bitmap.CompressFormat.PNG, 90, fos);
+            fos.flush();
+            fos.close();
+            //String imagenGuardada = MediaStore.Images.Media.insertImage(getContentResolver)
+            /*String path = Environment.getExternalStorageDirectory().toString();  // qutar esto
+            File myFile = new File(path,filename);   // en lugar de new filoe, tienes usar createTempFile o algo así
+            FileOutputStream out = new FileOutputStream(myFile);
+
+            image.compress(Bitmap.CompressFormat.PNG, 90, out); //Output
+
+             */
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void abrirGaleria() {
+        if (checkSelfPermission(requireContext(), READ_EXTERNAL_STORAGE) == PERMISSION_GRANTED && checkSelfPermission(requireContext(),WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED) {
+            lanzadorGaleria.launch("image/*");
+        } else {
+            lanzadorPermisos.launch(WRITE_EXTERNAL_STORAGE);
+            lanzadorPermisos.launch(READ_EXTERNAL_STORAGE);
+        }
+    }
+
+    private final ActivityResultLauncher<String> lanzadorGaleria =
+            registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
+                if (uri != null) {
+                  //  listaJugadoresViewModel.establecerImagenSeleccionada(uri.toString());
+                }
+            });
+
+    private final ActivityResultLauncher<String> lanzadorPermisos =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    lanzadorGaleria.launch("image/*");
+                }
+            });
+
 }

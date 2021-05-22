@@ -127,8 +127,10 @@ public class ObjetivosHitosFragment extends Fragment {
             value.forEach(document -> {
                 conseguidos.put(document.getId(), document.getString("progreso"));
             });
-            conseguidos.entrySet().forEach(e -> {
+            /*conseguidos.entrySet().forEach(e -> {
             });
+
+             */
             objetivosAdapter.notifyDataSetChanged();
         });
     }
@@ -198,7 +200,7 @@ public class ObjetivosHitosFragment extends Fragment {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    holder.binding.editText.clearFocus();
+                    //holder.binding.editText.clearFocus();
                 }
             });
 
