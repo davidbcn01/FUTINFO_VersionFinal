@@ -31,6 +31,7 @@ public class RegisterFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentRegisterBinding.inflate(inflater, container, false)).getRoot();
@@ -62,13 +63,15 @@ public class RegisterFragment extends Fragment {
                 String password = binding.registerPassword.getText().toString();
                 String passwordAgain = binding.registerEnterPasswordAgain.getText().toString();
 
+
+
                 if(!(password.equals(passwordAgain))){
                    Toast.makeText(getContext(),"Las contraseñas deben coincidir",Toast.LENGTH_SHORT).show();
                 }else {
                     mAuth.createUserWithEmailAndPassword(email,password);
                      //String document = mAuth.getCurrentUser().getUid();
-
-                       // firestore.collection("usuarios").document(document).set(email);
+                    //mAuth.c
+                      //  firestore.collection("users").document(document).set(email);
 
                     navController.navigate(R.id.action_registerFragment_to_logInFragment);
                 }

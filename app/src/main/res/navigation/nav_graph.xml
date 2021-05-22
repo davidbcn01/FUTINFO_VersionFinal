@@ -91,7 +91,11 @@
         android:id="@+id/objetivosHitosFragment"
         android:name="com.example.futinfov2.ObjetivosHitosFragment"
         android:label="fragment_objetivos_hitos"
-        tools:layout="@layout/fragment_objetivos_hitos" />
+        tools:layout="@layout/fragment_objetivos_hitos" >
+        <action
+            android:id="@+id/action_objetivosHitosFragment_to_objetivos1Fragment"
+            app:destination="@id/objetivos1Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/tacticasFormacionFragment"
         android:name="com.example.futinfov2.TacticasFormacionFragment"

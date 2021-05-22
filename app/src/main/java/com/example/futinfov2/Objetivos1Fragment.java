@@ -14,13 +14,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.futinfov2.databinding.FragmentObjetivos1Binding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class Objetivos1Fragment extends Fragment {
     FragmentObjetivos1Binding binding;
     private NavController navController;
     private TacticasViewModel tacticasViewModel;
-
+    private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentObjetivos1Binding.inflate(inflater, container, false)).getRoot();
@@ -32,26 +35,20 @@ public class Objetivos1Fragment extends Fragment {
         tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
 
 
-        binding.textView7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tacticasViewModel.setIdSBC((String) binding.textView7.getText());
-                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
-            }
+        binding.textView7.setOnClickListener(view1 -> {
+            tacticasViewModel.setIdSBC((String) binding.textView7.getText());
+           // if()
+            navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
         });
-        binding.textView8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tacticasViewModel.setIdSBC((String) binding.textView8.getText());
-                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
-            }
+
+        binding.textView8.setOnClickListener(view12 -> {
+            tacticasViewModel.setIdSBC((String) binding.textView8.getText());
+            navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
         });
-        binding.textView9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tacticasViewModel.setIdSBC((String) binding.textView9.getText());
-                navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
-            }
+
+        binding.textView9.setOnClickListener(view13 -> {
+            tacticasViewModel.setIdSBC((String) binding.textView9.getText());
+            navController.navigate(R.id.action_objetivos1Fragment_to_objetivosHitosFragment);
         });
 
     }
