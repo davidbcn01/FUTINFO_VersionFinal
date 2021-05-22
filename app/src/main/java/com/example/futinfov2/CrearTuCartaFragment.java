@@ -84,13 +84,13 @@ public class CrearTuCartaFragment extends Fragment {
             captureView();
             }
         });
-binding.nation.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        abrirGaleria();
-    }
-});
-    }
+        binding.nation.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 abrirGaleria();
+             }
+            });
+         }
 
     public void captureView(){
         boolean saved;
