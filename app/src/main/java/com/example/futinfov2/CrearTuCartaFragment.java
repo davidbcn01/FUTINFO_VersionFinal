@@ -93,7 +93,7 @@ public class CrearTuCartaFragment extends Fragment {
          }
 
     public void captureView(){
-        boolean saved;
+        //boolean saved;
         OutputStream fos;
         Bitmap image = Bitmap.createBitmap(binding.constraintLayout4.getWidth(),
                 binding.constraintLayout4.getHeight(),
