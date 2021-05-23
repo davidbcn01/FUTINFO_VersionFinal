@@ -2,63 +2,65 @@ package com.example.futinfov2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link rankingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.futinfov2.databinding.FragmentInfoSBCBinding;
+import com.example.futinfov2.databinding.FragmentRankingsBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+
 public class rankingsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentRankingsBinding binding;
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
+    private NavController navController;
+    private TacticasViewModel tacticasViewModel;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public rankingsFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment rankingsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static rankingsFragment newInstance(String param1, String param2) {
-        rankingsFragment fragment = new rankingsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return (binding = FragmentRankingsBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rankings, container, false);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        navController = Navigation.findNavController(view);
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
+        binding.textView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tacticasViewModel.setIdSBC(binding.sb.getText().toString());
+                navController.navigate(R.id.action_rankingsFragment_to_rankings2Fragment);
+            }
+        });
+        binding.textView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tacticasViewModel.setIdSBC(binding.dv.getText().toString());
+                navController.navigate(R.id.action_rankingsFragment_to_rankings2Fragment);
+            }
+        });
+        binding.textView9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tacticasViewModel.setIdSBC(binding.fc.getText().toString());
+                navController.navigate(R.id.action_rankingsFragment_to_rankings2Fragment);
+            }
+        });
     }
 }

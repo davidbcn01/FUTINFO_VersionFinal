@@ -158,7 +158,11 @@
         android:id="@+id/rankingsFragment"
         android:name="com.example.futinfov2.rankingsFragment"
         android:label="fragment_rankings"
-        tools:layout="@layout/fragment_rankings" />
+        tools:layout="@layout/fragment_rankings" >
+        <action
+            android:id="@+id/action_rankingsFragment_to_rankings2Fragment"
+            app:destination="@id/rankings2Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoJugadorFragment"
         android:name="com.example.futinfov2.InfoJugadorFragment"
@@ -199,4 +203,9 @@
         android:name="com.example.futinfov2.VerFutChampsFragment"
         android:label="fragment_ver_fut_champs"
         tools:layout="@layout/fragment_ver_fut_champs" />
+    <fragment
+        android:id="@+id/rankings2Fragment"
+        android:name="com.example.futinfov2.Rankings2Fragment"
+        android:label="fragment_rankings2"
+        tools:layout="@layout/fragment_rankings2" />
 </navigation>
