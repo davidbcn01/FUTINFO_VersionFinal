@@ -29,17 +29,33 @@ public class MainActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance().setFirestoreSettings(settings);
 
 
+
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.logInFragment || destination.getId() == R.id.splashScreenFragment || destination.getId() == R.id.registerFragment || destination.getId() == R.id.changePasswordFragment) {
                 binding.bottomNavView.setVisibility(View.GONE);
+
             } else {
                 binding.bottomNavView.setVisibility(View.VISIBLE);
+
             }
         });
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.logInFragment || destination.getId() == R.id.splashScreenFragment || destination.getId() == R.id.registerFragment || destination.getId() == R.id.changePasswordFragment || destination.getId() == R.id.inicioFragment) {
 
+                binding.inicio.setVisibility(View.GONE);
+            } else {
+                binding.inicio.setVisibility(View.VISIBLE);
+            }
+        });
+        binding.inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            navController.navigate(R.id.inicioFragment);
+            }
+        });
 
     }
 

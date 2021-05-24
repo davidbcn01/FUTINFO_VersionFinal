@@ -8,7 +8,7 @@
 
         <item
             android:id="@+id/futchamps1Fragment"
-            android:icon="@drawable/icono"
+            android:icon="@drawable/heroe"
             android:title="FutChamps" />
 
         <item

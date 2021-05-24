@@ -65,6 +65,8 @@ public class InfoSBCFragment extends Fragment {
                         Glide.with(requireContext())
                                 .load(imagenSobre)
                                 .into(binding.sobre);
+
+
                         imagen = sbc.getImagen();
 
                         Glide.with(requireContext())

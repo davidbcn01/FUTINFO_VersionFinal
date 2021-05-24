@@ -281,13 +281,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="40dp"
-        android:layout_height="46dp"
-        android:src="@drawable/abc_vector_test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/encabezado"
         android:layout_width="match_parent"
@@ -296,7 +290,7 @@
         android:text="FUTCHAMPIONS"
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/white"
-        android:textSize="36dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

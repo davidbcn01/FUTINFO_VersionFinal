@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TÁCTICAS"
-        android:textSize="36dp"
+        android:textSize="30dp"
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/white"
 

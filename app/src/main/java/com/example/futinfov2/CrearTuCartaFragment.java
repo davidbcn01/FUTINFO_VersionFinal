@@ -46,7 +46,6 @@ public class CrearTuCartaFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-
         binding.constraintLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

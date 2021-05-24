@@ -12,5 +12,6 @@
     <color name="amarillo">#FAFF06</color>
     <color name="Gristransparente">#AFC8C4B7</color>
     <color name="fondo">#AA444444</color>
+    <color name="transparente">#00000000</color>
 
 </resources>

@@ -15,7 +15,7 @@
 
         android:text="SBC"
         android:fontFamily="@font/montserratmedium"
-        android:textSize="36dp"
+        android:textSize="30dp"
         android:textColor="@color/white"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"

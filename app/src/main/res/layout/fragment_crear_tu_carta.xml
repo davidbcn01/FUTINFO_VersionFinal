@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:text="CREA TU CARTA"
             android:textColor="@color/white"
-            android:textSize="36dp"
+            android:textSize="30dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -343,6 +343,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditMedia"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Introduce la media"
@@ -360,6 +361,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditPosicion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -457,6 +459,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditRitmo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -474,6 +477,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditTiro"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -491,6 +495,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditPase"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -508,6 +513,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditRegate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -525,6 +531,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditDefensa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -542,6 +549,7 @@
                             android:textColor="@color/white" />
 
                         <EditText
+                            android:id="@+id/EditFisico"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/log_in_bg"
@@ -551,15 +559,16 @@
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce el físico" />
 
-                        <Button
+                        <android.widget.Button
                             android:id="@+id/descargar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:backgroundTint="@color/azul_cian"
+                            android:background="@drawable/cyan_dark_blue_mini_medium"
                             android:text="Descargar"
+
                             android:fontFamily="@font/montserratmedium"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white" />
 
 
                 </LinearLayout>
