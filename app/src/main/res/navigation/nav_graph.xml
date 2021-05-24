@@ -207,5 +207,14 @@
         android:id="@+id/rankings2Fragment"
         android:name="com.example.futinfov2.Rankings2Fragment"
         android:label="fragment_rankings2"
-        tools:layout="@layout/fragment_rankings2" />
+        tools:layout="@layout/fragment_rankings2" >
+        <action
+            android:id="@+id/action_rankings2Fragment_to_rankings3Fragment"
+            app:destination="@id/rankings3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankings3Fragment"
+        android:name="com.example.futinfov2.Rankings3Fragment"
+        android:label="fragment_rankings3"
+        tools:layout="@layout/fragment_rankings3" />
 </navigation>
