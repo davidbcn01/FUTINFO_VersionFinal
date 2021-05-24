@@ -558,6 +558,23 @@
                             android:textColorHint="@color/Gris"
                             android:fontFamily="@font/montserratmedium"
                             android:hint="Introduce el físico" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre"
+                            android:fontFamily="@font/montserratmedium"
+                            android:textColor="@color/white" />
+
+                        <EditText
+                            android:id="@+id/EditName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/log_in_bg"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/Gris"
+                            android:fontFamily="@font/montserratmedium"
+                            android:hint="Introduce el nombre" />
 
                         <android.widget.Button
                             android:id="@+id/descargar"
