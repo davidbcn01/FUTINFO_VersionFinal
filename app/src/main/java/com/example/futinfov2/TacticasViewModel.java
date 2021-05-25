@@ -8,6 +8,7 @@ public class TacticasViewModel extends ViewModel {
     private MutableLiveData<String> nombreMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<String> partidoMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<FirebaseJugadores.Jugador> jugadorMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<String> imagenMutableLiveData = new MutableLiveData<>();
 
     public MutableLiveData<String> getIdSBC() {
         return idSBCMutableLiveData;
@@ -23,12 +24,21 @@ public class TacticasViewModel extends ViewModel {
     public void setNombreMutableLiveData(String nombre){
         nombreMutableLiveData.setValue(nombre);
     }
+
     public MutableLiveData<String> getPartidoMutableLiveData() {
         return partidoMutableLiveData;
     }
 
     public void setPartidoMutableLiveData(String partido){
         partidoMutableLiveData.setValue(partido);
+    }
+
+    public MutableLiveData<String> getImagenMutableLiveData() {
+        return imagenMutableLiveData;
+    }
+
+    public void setImagenMutableLiveData(String imagen){
+        imagenMutableLiveData.setValue(imagen);
     }
 
     public MutableLiveData<FirebaseJugadores.Jugador> getJugadorMutableLiveData() {

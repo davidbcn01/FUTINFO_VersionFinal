@@ -9,6 +9,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -38,6 +40,9 @@ public class CrearTuCartaFragment extends Fragment {
 
     private FragmentCrearTuCartaBinding binding;
     private NavController navController;
+    private TacticasViewModel tacticasViewModel;
+    String imagenSeleccionada;
+    int num;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +52,33 @@ public class CrearTuCartaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
+
+        tacticasViewModel.getImagenMutableLiveData().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                //imagenSeleccionada = s;
+                System.out.println("EEEEEEEEOEOOEOEOEOEOEOEOE");
+                System.out.println(s);
+                if (num==1){
+                    Glide.with(requireContext())
+                            .load(s)
+                            .into(binding.nacionalidad);
+                }
+                if (num==2){
+                    Glide.with(requireContext())
+                            .load(s)
+                            .into(binding.teamCrear);
+                }
+                if (num==3){
+                    Glide.with(requireContext())
+                            .load(s)
+                            .into(binding.faceCrear);
+                }
+
+            }
+        });
+
 
         binding.constraintLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,8 +212,25 @@ public class CrearTuCartaFragment extends Fragment {
              @Override
              public void onClick(View v) {
                  abrirGaleria();
+                 num=1;
              }
             });
+        binding.teamFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirGaleria();
+                num=2;
+
+            }
+        });
+        binding.caraJugador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirGaleria();
+                num=3;
+
+            }
+        });
          }
 
     public void captureView(){
@@ -230,7 +279,9 @@ public class CrearTuCartaFragment extends Fragment {
     private final ActivityResultLauncher<String> lanzadorGaleria =
             registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
                 if (uri != null) {
-                  //  listaJugadoresViewModel.establecerImagenSeleccionada(uri.toString());
+                    tacticasViewModel.setImagenMutableLiveData(uri.toString());
+                    System.out.println("ADIOOOOOOOOOOOOOOOOOOOOOS");
+                    System.out.println(uri.toString());
                 }
             });
 
