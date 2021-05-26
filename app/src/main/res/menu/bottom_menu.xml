@@ -17,7 +17,7 @@
             android:title="Tácticas" />
         <item
             android:id="@+id/crearTuCartaFragment"
-            android:icon="@drawable/plus_circle"
+            android:icon="@drawable/plus"
             android:title="Crear" />
         <item
             android:id="@+id/seleccionObSBCFragment"

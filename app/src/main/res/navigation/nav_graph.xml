@@ -55,12 +55,13 @@
         <action
             android:id="@+id/action_inicioFragment_to_futchamps1Fragment"
             app:destination="@id/futchamps1Fragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_crearTuCartaFragment"
+            app:destination="@id/crearTuCartaFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_rankingsFragment"
+            app:destination="@id/rankingsFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/jugadoresValiososFragment"
-        android:name="com.example.futinfov2.JugadoresValiososFragment"
-        android:label="fragment_jugadores_valiosos"
-        tools:layout="@layout/fragment_jugadores_valiosos" />
     <fragment
         android:id="@+id/crearTuCartaFragment"
         android:name="com.example.futinfov2.CrearTuCartaFragment"

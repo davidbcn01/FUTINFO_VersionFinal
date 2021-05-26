@@ -434,6 +434,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/cyan_dark_blue_mini_medium"
         android:text="Guardar"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"

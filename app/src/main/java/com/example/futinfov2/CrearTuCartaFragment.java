@@ -21,6 +21,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentChangePasswordBinding;
@@ -43,6 +44,7 @@ public class CrearTuCartaFragment extends Fragment {
     private TacticasViewModel tacticasViewModel;
     String imagenSeleccionada;
     int num;
+    String nomImagen;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -200,6 +202,7 @@ public class CrearTuCartaFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 binding.nameCrear.setText(s.toString());
+                nomImagen = binding.nameCrear.getText().toString();
             }
         });
         binding.descargar.setOnClickListener(new View.OnClickListener() {
@@ -250,19 +253,15 @@ public class CrearTuCartaFragment extends Fragment {
             if(!file.exists()){
                 file.mkdir();
             }
-            File imagen = new File(dirImagen,"Imagen.png");
+            File imagen = new File(dirImagen,nomImagen+".png");
             fos = new FileOutputStream(imagen);
              image.compress(Bitmap.CompressFormat.PNG, 90, fos);
+
             fos.flush();
             fos.close();
-            //String imagenGuardada = MediaStore.Images.Media.insertImage(getContentResolver)
-            /*String path = Environment.getExternalStorageDirectory().toString();  // qutar esto
-            File myFile = new File(path,filename);   // en lugar de new filoe, tienes usar createTempFile o algo así
-            FileOutputStream out = new FileOutputStream(myFile);
+            Toast.makeText(requireContext(),"Imagen guardada en la carpeta Download",Toast.LENGTH_SHORT).show();
 
-            image.compress(Bitmap.CompressFormat.PNG, 90, out); //Output
 
-             */
         } catch (Exception e) {
             e.printStackTrace();
         }

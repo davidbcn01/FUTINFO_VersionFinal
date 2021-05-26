@@ -74,13 +74,14 @@ public class ObjetivosHitosFragment extends Fragment {
                     coleccion = idSBC;
                     id = "kz5BAjAL9T9zU0gHgCiF";
                     objColection = "liga";
-                    binding.encabezado.setText(idSBC.toUpperCase());
+
+                    binding.encabezado.setText("JUG. LIGA");
                     break;
                 case "Objetivos diarios":
                     coleccion = idSBC;
                     id = "PYOIkdC5n5m1QYob4EgD";
                     objColection = "objetivosDiarios";
-                    binding.encabezado.setText(idSBC.toUpperCase());
+                    binding.encabezado.setText("DIARIOS");
                     break;
             }
             getObjetivos(id, objColection);
@@ -93,28 +94,7 @@ public class ObjetivosHitosFragment extends Fragment {
 
 
     }
-/*
-    public void captureView(int viewId,String filename){
-        //Find the view we are after
-              //Create a Bitmap with the same dimensions
-        Bitmap image = Bitmap.createBitmap(binding.recyclerView.getWidth(),
-                binding.recyclerView.getHeight(),
-                Bitmap.Config.RGB_565);
-        //Draw the view inside the Bitmap
-        binding.recyclerView.draw(new Canvas(image));
 
-        //Store to sdcard
-        try {
-            String path = Environment.getExternalStorageDirectory().toString();  // qutar esto
-            File myFile = new File(path,filename);   // en lugar de new filoe, tienes usar createTempFile o algo así
-            FileOutputStream out = new FileOutputStream(myFile);
-
-            image.compress(Bitmap.CompressFormat.PNG, 90, out); //Output
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-*/
     private void setObjetivos(String colection) {
         conseguidos.entrySet().forEach(e -> {
             db.collection("users").document(mAuth.getUid()).collection(colection).document(e.getKey()).set(new Objetivo(e.getValue()));

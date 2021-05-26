@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.futinfov2.databinding.FragmentInfoSBCBinding;
 import com.example.futinfov2.databinding.FragmentRankingsBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -62,5 +63,15 @@ public class rankingsFragment extends Fragment {
                 navController.navigate(R.id.action_rankingsFragment_to_rankings2Fragment);
             }
         });
-    }
+        Glide.with(requireContext())
+                .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/iconos_app%2FFUT-CHampions.png?alt=media&token=1ebb8114-64e7-46c3-993a-6cbb99508ee4")
+                .into(binding.imageView5);
+        Glide.with(requireContext())
+                .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/iconos_app%2Frivals.png?alt=media&token=8747ba46-0b49-40e5-b810-661707a59e60")
+                .into(binding.image);
+        Glide.with(requireContext())
+                .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/iconos_app%2Fsquad-battles.png?alt=media&token=2e170b40-b423-40d2-9f04-9442f6b25a94")
+                .into(binding.imageView4);
+
+        }
 }
