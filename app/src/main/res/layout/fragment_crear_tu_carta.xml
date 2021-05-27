@@ -584,8 +584,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:background="@drawable/cyan_dark_blue_mini_medium"
-                            android:text="Guardar en galeria"
+                            android:background="@drawable/cyan_dark_blue_stroke"
+                            android:text="Guardar en el dispositivo"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
 
                             android:fontFamily="@font/montserratmedium"
                             android:textColor="@color/white" />

@@ -2,7 +2,7 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/rankingsFragment"
-            android:icon="@drawable/home_alt_fill"
+            android:icon="@drawable/ranking_icon"
             android:title="Rankings"
             />
 

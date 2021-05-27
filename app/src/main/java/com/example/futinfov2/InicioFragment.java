@@ -97,7 +97,7 @@ public class InicioFragment extends Fragment {
         binding.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tacticasViewModel.setIdSBC("Hitos");
+                tacticasViewModel.setIdSBC("Jugador de liga");
                 navController.navigate(R.id.action_inicioFragment_to_objetivosHitosFragment);
             }
         });
