@@ -60,8 +60,7 @@ public class CrearTuCartaFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 //imagenSeleccionada = s;
-                System.out.println("EEEEEEEEOEOOEOEOEOEOEOEOE");
-                System.out.println(s);
+
                 if (num==1){
                     Glide.with(requireContext())
                             .load(s)
@@ -236,16 +235,16 @@ public class CrearTuCartaFragment extends Fragment {
         });
          }
 
-    public void captureView(){
-        //boolean saved;
+    public void captureView(){// metodo para guardar la carta creada por ell usuario
+
         OutputStream fos;
         Bitmap image = Bitmap.createBitmap(binding.constraintLayout4.getWidth(),
                 binding.constraintLayout4.getHeight(),
                 Bitmap.Config.RGB_565);
-        //Draw the view inside the Bitmap
+
         binding.constraintLayout4.draw(new Canvas(image));
 
-        //Store to sdcard
+
         try {
             String dirImagen = Environment.getExternalStoragePublicDirectory(
                     Environment.DIRECTORY_DOWNLOADS).toString();

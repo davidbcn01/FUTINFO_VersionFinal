@@ -48,7 +48,6 @@ public class Rankings3Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        super.onViewCreated(view, savedInstanceState);
         auth=FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         navController = Navigation.findNavController(view);

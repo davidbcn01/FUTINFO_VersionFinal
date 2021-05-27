@@ -49,7 +49,7 @@ public class ChangePasswordFragment extends Fragment {
                     String email = binding.changePasswordEmail.getText().toString();
 
                     mAuth.sendPasswordResetEmail(email)
-                            .addOnCompleteListener(task -> {
+                            .addOnCompleteListener(task -> {//metodo para enviar email para resetear la contraseña
                                 if (task.isSuccessful()) {
                                     Toast.makeText(requireActivity(), "Te hemos enviado un email", Toast.LENGTH_SHORT).show();
                                 } else {
