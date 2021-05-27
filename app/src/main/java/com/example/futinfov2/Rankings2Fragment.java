@@ -58,11 +58,11 @@ public class Rankings2Fragment extends Fragment {
                     coleccion = idSBC;
 
                     break;
-                case "Jugador de liga":
+                case "Division Rivals":
                     coleccion = idSBC;
 
                     break;
-                case "Objetivos diarios":
+                case "FutChampions":
                     coleccion = idSBC;
                     break;
             }
