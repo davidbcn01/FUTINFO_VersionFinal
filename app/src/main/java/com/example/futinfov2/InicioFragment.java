@@ -99,21 +99,7 @@ public class InicioFragment extends Fragment {
             contenidosAdapter.notifyDataSetChanged();
         });
 
-        FirebaseJugadoresViewModel firebaseJugadoresViewModel = new ViewModelProvider(this).get(FirebaseJugadoresViewModel.class);
 
-        //firebaseJugadoresViewModel.obtener();
-
-
-
-       /* firebaseJugadoresViewModel.respuestaMutableLiveData.observe(getViewLifecycleOwner(), new Observer<FirebaseJugadores.Jugadores>() {
-            @Override
-            public void onChanged(FirebaseJugadores.Jugadores respuesta) {
-                contenidosAdapter.establecerListaContenido(respuesta.documents);
-                respuesta.documents.forEach(contenido -> Log.e("ABCD", contenido.fields.name.stringValue + ", " + contenido.fields.position.stringValue + ", " + contenido.fields.rating.stringValue));
-            }
-        });
-
-*/
 
 
         Glide.with(requireContext())
@@ -197,7 +183,7 @@ public class InicioFragment extends Fragment {
 
 
     class ContenidosAdapter extends RecyclerView.Adapter<ContenidoViewHolder>{
-       // List<FirebaseJugadores.Jugador> jugadoresList;
+
 
         @NonNull
         @Override
@@ -224,7 +210,6 @@ public class InicioFragment extends Fragment {
                       holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
                           @Override
                           public void onClick(View v) {
-
                               tacticasViewModel.setJugadorMutableLiveData(player);
                               navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
                           }
@@ -249,11 +234,6 @@ public class InicioFragment extends Fragment {
             return  jugadoresList.size();
         }
 
-        /*void establecerListaContenido(List<FirebaseJugadores.Jugador> jugadoresList){
-            this.jugadoresList = jugadoresList;
-            notifyDataSetChanged();
-        }
 
-         */
     }
 }
