@@ -40,6 +40,7 @@ public class InicioFragment extends Fragment {
     Jugador player = null;
 
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentInicioBinding.inflate(inflater, container, false)).getRoot();
