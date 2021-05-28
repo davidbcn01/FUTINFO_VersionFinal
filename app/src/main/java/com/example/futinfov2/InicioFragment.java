@@ -37,7 +37,7 @@ public class InicioFragment extends Fragment {
     private FirebaseFirestore db;
     private TacticasViewModel tacticasViewModel;
     private List<Jugador> jugadoresList = new ArrayList<>();
-    Jugador player;
+    Jugador player = null;
 
 
     @Override
@@ -99,8 +99,7 @@ public class InicioFragment extends Fragment {
             contenidosAdapter.notifyDataSetChanged();
         });
 
-
-
+        tacticasViewModel.setJugadorMutableLiveData(player);
 
         Glide.with(requireContext())
                 .load("https://firebasestorage.googleapis.com/v0/b/futinfo-1b129.appspot.com/o/iconos_app%2FxpIcon.png?alt=media&token=cc6a994b-65e8-45dd-bfb3-7fea549374d3")
@@ -193,11 +192,13 @@ public class InicioFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull ContenidoViewHolder holder, int position) {
+
           tacticasViewModel.getJugadorMutableLiveData().observe(getViewLifecycleOwner(), new Observer<Jugador>() {
               @Override
               public void onChanged(Jugador jugador) {
                   player = jugador;
-                  System.out.println(player.media);
+//                  System.out.println(player.media);
+
                   if(player != null){
                       binding.recyclerView3.setVisibility(View.VISIBLE);
                       holder.binding.nombre.setText(player.nombre);
@@ -210,14 +211,18 @@ public class InicioFragment extends Fragment {
                       holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
                           @Override
                           public void onClick(View v) {
+
                               tacticasViewModel.setJugadorMutableLiveData(player);
+                              player = null;
+
                               navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
+
                           }
                       });
                   }else{
+                      player = null;
                       binding.recyclerView3.setVisibility(View.INVISIBLE);
                   }
-
               }
 
           });

@@ -58,7 +58,7 @@
             android:layout_marginEnd="138dp"
             android:layout_marginBottom="206dp"
             android:text="AA"
-
+            android:textColor="@color/black"
             android:textSize="18dp" />
 
         <TextView
@@ -74,7 +74,7 @@
             android:layout_marginEnd="141dp"
             android:layout_marginBottom="229dp"
             android:text="00"
-
+            android:textColor="@color/black"
             android:textSize="25dp" />
 
         <ImageView
@@ -131,6 +131,7 @@
             android:layout_marginTop="161dp"
             android:layout_marginEnd="65dp"
             android:layout_marginBottom="112dp"
+            android:textColor="@color/black"
             android:text="NOMBRE" />
 
         <TextView
@@ -146,7 +147,7 @@
             android:layout_marginEnd="72dp"
             android:layout_marginBottom="66dp"
             android:text="00"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -162,6 +163,7 @@
             android:layout_marginEnd="69dp"
             android:layout_marginBottom="99dp"
             android:text="00"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -177,6 +179,7 @@
             android:layout_marginEnd="145dp"
             android:layout_marginBottom="46dp"
             android:text="00"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -192,7 +195,7 @@
             android:layout_marginEnd="104dp"
             android:layout_marginBottom="44dp"
             android:text="PAS"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -208,7 +211,7 @@
             android:layout_marginEnd="112dp"
             android:layout_marginBottom="74dp"
             android:text="TIR"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -224,7 +227,7 @@
             android:layout_marginEnd="110dp"
             android:layout_marginBottom="85dp"
             android:text="RIT"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -240,15 +243,13 @@
             android:layout_marginEnd="144dp"
             android:layout_marginBottom="73dp"
             android:text="00"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
             android:id="@+id/dribbling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:layout_alignStart="@+id/carta"
             android:layout_alignTop="@+id/carta"
             android:layout_alignEnd="@+id/carta"
@@ -258,7 +259,7 @@
             android:layout_marginEnd="33dp"
             android:layout_marginBottom="86dp"
             android:text="REG"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -274,6 +275,7 @@
             android:layout_marginEnd="149dp"
             android:layout_marginBottom="91dp"
             android:text="00"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -290,6 +292,7 @@
             android:layout_marginEnd="38dp"
             android:layout_marginBottom="65dp"
             android:text="DEF"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
@@ -305,13 +308,13 @@
             android:layout_marginEnd="72dp"
             android:layout_marginBottom="50dp"
             android:text="00"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <TextView
             android:id="@+id/physicality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignStart="@+id/carta"
             android:layout_alignTop="@+id/carta"
             android:layout_alignEnd="@+id/carta"
@@ -321,7 +324,7 @@
             android:layout_marginEnd="38dp"
             android:layout_marginBottom="50dp"
             android:text="FIS"
-
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
     </RelativeLayout>

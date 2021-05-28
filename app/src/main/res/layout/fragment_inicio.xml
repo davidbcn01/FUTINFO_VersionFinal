@@ -30,6 +30,7 @@
         android:selectAllOnFocus="true"
         android:hint="Busca un jugador"
         android:textColorHint="@color/Gris"
+        android:text=""
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

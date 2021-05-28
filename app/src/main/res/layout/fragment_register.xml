@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/transparente"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flecha" />
+        app:srcCompat="@drawable/vector" />
 
 
 
