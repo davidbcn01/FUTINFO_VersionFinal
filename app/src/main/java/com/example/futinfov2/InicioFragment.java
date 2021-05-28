@@ -25,6 +25,7 @@ import com.example.futinfov2.databinding.ViewholderJugadorBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
@@ -35,7 +36,8 @@ public class InicioFragment extends Fragment {
     private NavController navController;
     private FirebaseFirestore db;
     private TacticasViewModel tacticasViewModel;
-
+    private List<Jugador> jugadoresList = new ArrayList<>();
+    Jugador player;
 
 
     @Override
@@ -48,36 +50,62 @@ public class InicioFragment extends Fragment {
         navController = Navigation.findNavController(view);
         db = FirebaseFirestore.getInstance();
         tacticasViewModel = new ViewModelProvider(requireActivity()).get(TacticasViewModel.class);
+        ContenidosAdapter contenidosAdapter = new ContenidosAdapter();
+        binding.recyclerView3.setAdapter(contenidosAdapter);
         db.collection("jugadores").document("iUZSJOddr0oP8hL2NJJp").addSnapshotListener(((value, error) ->{
             Jugador jugador = new Jugador(value.getString("name"),value.getString("position"),value.getString("rating"),value.getString("country"),value.getString("team"),value.getString("face"),value.getString("card"));
-            binding.position2.setText(jugador.posicion);
-            binding.name.setText(jugador.nombre);
-            binding.rating.setText(String.valueOf(jugador.media));
-            Glide.with(requireContext())
-                    .load(jugador.cara)
-                    .into(binding.face);
-            Glide.with(requireContext())
-                    .load(jugador.pais)
-                    .into(binding.country);
-            Glide.with(requireContext())
-                    .load(jugador.equipo)
-                    .into(binding.team);
-            Glide.with(requireContext())
-                    .load(jugador.tipo)
-                    .into(binding.tipo);
+                        binding.position2.setText(jugador.posicion);
+                        binding.name.setText(jugador.nombre);
+                        binding.rating.setText(String.valueOf(jugador.media));
+                        Glide.with(requireContext())
+                                .load(jugador.cara)
+                                .into(binding.face);
+                        Glide.with(requireContext())
+                                .load(jugador.pais)
+                                .into(binding.country);
+                        Glide.with(requireContext())
+                                .load(jugador.equipo)
+                                .into(binding.team);
+                        Glide.with(requireContext())
+                                .load(jugador.tipo)
+                                .into(binding.tipo);
 
-        }
+                         }
 
                 ));
 
+        db.collection("jugadores").addSnapshotListener((value, error) -> {
+            jugadoresList.clear();
+            value.forEach(document ->{
+                jugadoresList.add(new Jugador(
+                        document.getString("name"),
+                        document.getString("position"),
+                        document.getString("rating"),
+                        document.getString("country"),
+                        document.getString("team"),
+                        document.getString("face"),
+                        document.getString("pace"),
+                        document.getString("shoot"),
+                        document.getString("pass"),
+                        document.getString("dribbling"),
+                        document.getString("defense"),
+                        document.getString("physic"),
+                        document.getString("cardBig"),
+                        document.getString("card"),
+                        document.getString("price")
+
+                ));
+            });
+            contenidosAdapter.notifyDataSetChanged();
+        });
+
         FirebaseJugadoresViewModel firebaseJugadoresViewModel = new ViewModelProvider(this).get(FirebaseJugadoresViewModel.class);
 
-        firebaseJugadoresViewModel.obtener();
+        //firebaseJugadoresViewModel.obtener();
 
-        ContenidosAdapter contenidosAdapter = new ContenidosAdapter();
-        binding.recyclerView3.setAdapter(contenidosAdapter);
 
-        firebaseJugadoresViewModel.respuestaMutableLiveData.observe(getViewLifecycleOwner(), new Observer<FirebaseJugadores.Jugadores>() {
+
+       /* firebaseJugadoresViewModel.respuestaMutableLiveData.observe(getViewLifecycleOwner(), new Observer<FirebaseJugadores.Jugadores>() {
             @Override
             public void onChanged(FirebaseJugadores.Jugadores respuesta) {
                 contenidosAdapter.establecerListaContenido(respuesta.documents);
@@ -85,7 +113,7 @@ public class InicioFragment extends Fragment {
             }
         });
 
-
+*/
 
 
         Glide.with(requireContext())
@@ -131,7 +159,33 @@ public class InicioFragment extends Fragment {
                 navController.navigate(R.id.action_inicioFragment_to_tacticasOfensivasFragment);
             }
         });
+
+
+        binding.searchPlayer.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                for (int i = 0; i<jugadoresList.size();i++){
+                    if (s.toString().equals(jugadoresList.get(i).nombre)){
+                        player = jugadoresList.get(i);
+                        System.out.println("AAAAAAAAAAAAAAAAAAAAAA");
+                        System.out.println(player.nombre);
+                        tacticasViewModel.setJugadorMutableLiveData(player);
+                    }
+                }
+            }
+
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+
+        });
     }
+
+
+
     static class ContenidoViewHolder extends RecyclerView.ViewHolder {
         ViewholderJugadorBinding binding;
 
@@ -143,7 +197,7 @@ public class InicioFragment extends Fragment {
 
 
     class ContenidosAdapter extends RecyclerView.Adapter<ContenidoViewHolder>{
-        List<FirebaseJugadores.Jugador> jugadoresList;
+       // List<FirebaseJugadores.Jugador> jugadoresList;
 
         @NonNull
         @Override
@@ -153,50 +207,52 @@ public class InicioFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull ContenidoViewHolder holder, int position) {
-            FirebaseJugadores.Jugador jugador = jugadoresList.get(position);
+          tacticasViewModel.getJugadorMutableLiveData().observe(getViewLifecycleOwner(), new Observer<Jugador>() {
+              @Override
+              public void onChanged(Jugador jugador) {
+                  player = jugador;
+                  System.out.println(player.media);
+                  if(player != null){
+                      binding.recyclerView3.setVisibility(View.VISIBLE);
+                      holder.binding.nombre.setText(player.nombre);
+                      holder.binding.media.setText(player.media);
+                      holder.binding.posicion.setText(player.posicion);
+                      Glide.with(requireActivity()).load(player.cartaP).into(holder.binding.fondo);
+                      Glide.with(requireActivity()).load(player.equipo).into(holder.binding.equipo);
+                      Glide.with(requireActivity()).load(player.pais).into(holder.binding.pais);
+                      Glide.with(requireActivity()).load(player.cara).into(holder.binding.cara);
+                      holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
+                          @Override
+                          public void onClick(View v) {
+                              tacticasViewModel.setJugadorMutableLiveData(player);
+                              navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
+                          }
+                      });
+                  }else{
+                      binding.recyclerView3.setVisibility(View.INVISIBLE);
+                  }
 
-            binding.searchPlayer.addTextChangedListener(new TextWatcher() {
-                @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+              }
 
-                @Override
-                public void afterTextChanged(Editable s) { }
+          });
 
-                @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if (s.toString().equals(jugador.fields.name.stringValue)){
-                        binding.recyclerView3.setVisibility(View.VISIBLE);
-                        holder.binding.nombre.setText(jugador.fields.name.stringValue);
-                        holder.binding.media.setText(jugador.fields.rating.stringValue);
-                        holder.binding.posicion.setText(jugador.fields.position.stringValue);
-                        Glide.with(requireActivity()).load(jugador.fields.card.stringValue).into(holder.binding.fondo);
-                        Glide.with(requireActivity()).load(jugador.fields.team.stringValue).into(holder.binding.equipo);
-                        Glide.with(requireActivity()).load(jugador.fields.country.stringValue).into(holder.binding.pais);
-                        Glide.with(requireActivity()).load(jugador.fields.face.stringValue).into(holder.binding.cara);
-                        holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                tacticasViewModel.setJugadorMutableLiveData(jugador);
-                                navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
-                            }
-                        });
-                    }else{
-                        binding.recyclerView3.setVisibility(View.INVISIBLE);
-                    }
                 }
 
 
-            });
 
 
-        }
+
 
         @Override
         public int getItemCount() {
-            return jugadoresList == null ? 0 : jugadoresList.size();
+            return  jugadoresList.size();
         }
 
-        void establecerListaContenido(List<FirebaseJugadores.Jugador> jugadoresList){
+        /*void establecerListaContenido(List<FirebaseJugadores.Jugador> jugadoresList){
             this.jugadoresList = jugadoresList;
             notifyDataSetChanged();
         }
+
+         */
     }
 }

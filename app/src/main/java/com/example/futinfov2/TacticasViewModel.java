@@ -7,11 +7,18 @@ public class TacticasViewModel extends ViewModel {
      private MutableLiveData<String> idSBCMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<String> nombreMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<String> partidoMutableLiveData = new MutableLiveData<>();
-    private MutableLiveData<FirebaseJugadores.Jugador> jugadorMutableLiveData = new MutableLiveData<>();
+   // private MutableLiveData<FirebaseJugadores.Jugador> jugadorMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<String> imagenMutableLiveData = new MutableLiveData<>();
-
+    private MutableLiveData<Jugador> jugadorMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<String> getIdSBC() {
         return idSBCMutableLiveData;
+    }
+
+    public void setJugadorMutableLiveData(Jugador jugador){
+        jugadorMutableLiveData.setValue(jugador);
+    }
+    public MutableLiveData<Jugador> getJugadorMutableLiveData() {
+        return jugadorMutableLiveData;
     }
 
     public void setIdSBC(String boton){
@@ -41,11 +48,13 @@ public class TacticasViewModel extends ViewModel {
         imagenMutableLiveData.setValue(imagen);
     }
 
-    public MutableLiveData<FirebaseJugadores.Jugador> getJugadorMutableLiveData() {
+    /*public MutableLiveData<FirebaseJugadores.Jugador> getJugadorMutableLiveData() {
         return jugadorMutableLiveData;
     }
-
-    public void setJugadorMutableLiveData(FirebaseJugadores.Jugador jugador) {
+*/
+   /* public void setJugadorMutableLiveData(FirebaseJugadores.Jugador jugador) {
         jugadorMutableLiveData.setValue(jugador);
     }
+    */
+
 }
