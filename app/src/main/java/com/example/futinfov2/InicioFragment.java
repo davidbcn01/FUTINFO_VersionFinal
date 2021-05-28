@@ -224,6 +224,7 @@ public class InicioFragment extends Fragment {
                       holder.binding.constLJug.setOnClickListener(new View.OnClickListener() {
                           @Override
                           public void onClick(View v) {
+
                               tacticasViewModel.setJugadorMutableLiveData(player);
                               navController.navigate(R.id.action_inicioFragment_to_infoJugadorFragment);
                           }
